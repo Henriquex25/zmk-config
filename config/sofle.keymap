@@ -1,96 +1,222 @@
+/*
+ * Sofle V2 — Keymap ZMK personalizado
+ * Projetado para: programação (Node.js/JS, PHP, Python, Java, Go, CSS, HTML) + PT-BR
+ *
+ * ADAPTAÇÃO NECESSÁRIA: este arquivo assume a matriz padrão do Sofle
+ * (4 linhas de 6 colunas + linha extra de 2 teclas por lado + 3 teclas de polegar por lado
+ * = 58 posições). Se o seu keymap.overlay/matrix_transform gerado pelo template oficial
+ * numerar as posições em outra ordem, ajuste a ORDEM dos &kp dentro de cada "bindings",
+ * mantendo o desenho lógico (os comentários ASCII mostram a intenção física).
+ *
+ * LAYERS (o mínimo necessário para não gerar "salada mental"):
+ *   0 BASE    -> letras QWERTY, números, pontuação básica
+ *   1 SYM     -> símbolos de programação (hold no polegar direito interno)
+ *   2 NAV     -> setas na mão direita, estilo Vim (hold no polegar esquerdo interno)
+ *   3 FUNC    -> F-keys, mídia, Bluetooth, RGB, reset (SÓ aparece segurando SYM+NAV juntos)
+ *   4 SHORT   -> atalhos VSCode (direita) + OS/janelas (esquerda) (toggle, tecla dedicada)
+ *   5 NUMPAD  -> numpad completo na mão direita, estilo teclado full-size (toggle, tecla dedicada)
+ */
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
 
-// Definição dos nomes das Layers para facilitar a leitura
-#define BASE 0
-#define NAV_NUM 1
-#define SYMBOLS 2
-#define VSCODE_OS 3
-#define SYSTEM 4
+#define BASE   0
+#define SYM    1
+#define NAV    2
+#define FUNC   3
+#define SHORT  4
+#define NUMPAD 5
 
 / {
-    // Bloco de Combos (Atalhos rápidos pressionando duas teclas juntas)
     combos {
         compatible = "zmk,combos";
-        
-        // Pressionar Q e W juntos = ESC (Perfeito para sair do Insert no VIM)
+
+        /* ESC: S + D (home row, mão esquerda) — evita esticar até o canto da linha de números.
+           Dois dedos vizinhos na mesma mão = confortável, não é "malabarismo". */
         combo_esc {
-            timeout-ms = <50>;
-            key-positions = <13 14>;
+            timeout-ms = <40>;
+            key-positions = <25 26>;
             bindings = <&kp ESC>;
+            layers = <BASE SYM NAV>;
         };
-        
-        // Pressionar J e K juntos = ENTER (Agiliza pular linha no código)
-        combo_enter {
-            timeout-ms = <50>;
+
+        /* Salvar rápido: J + K (home row, mão direita) -> Ctrl+S.
+           Útil em qualquer editor, inclusive fora de uma layer de atalhos dedicada. */
+        combo_save {
+            timeout-ms = <40>;
             key-positions = <31 32>;
-            bindings = <&kp RET>;
+            bindings = <&kp LC(S)>;
+            layers = <BASE>;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        /* Segurar SYM + NAV ao mesmo tempo (os dois polegares internos) ativa FUNC.
+           Isso evita reservar uma tecla dedicada para uma layer usada com pouca frequência,
+           e o reset/bootloader fica "protegido" por precisar das duas mãos nos polegares. */
+        func_layer {
+            if-layers = <SYM NAV>;
+            then-layer = <FUNC>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            // LAYER 0: BASE (Letras QWERTY, polegares otimizados)
+        // ===================================================================================
+        // LAYER 0 — BASE
+        // ===================================================================================
+        // ,-----------------------------------.                    ,-----------------------------------.
+        // |  `  |  1  |  2  |  3  |  4  |  5  |                    |  6  |  7  |  8  |  9  |  0  |  -  |
+        // |-----------------------------------|                    |-----------------------------------|
+        // | TAB |  Q  |  W  |  E  |  R  |  T  |                    |  Y  |  U  |  I  |  O  |  P  |BSPC |
+        // |-----------------------------------|                    |-----------------------------------|
+        // | ESC |  A  |  S  |  D  |  F  |  G  |                    |  H  |  J  |  K  |  L  |  ;  |  '  |
+        // |-----------------------------------|                    |-----------------------------------|
+        // |SHIFT|  Z  |  X  |  C  |  V  |  B  |                    |  N  |  M  |  ,  |  .  |  /  |SHIFT|
+        // '-----------------------------------'                    '-----------------------------------'
+        //         |TG(4)|TG(5)|                                    |CAPSWD|BT_PRV|
+        //               |LGUI |LCTRL|LT(NAV,SPC) |     |LT(SYM,RET)|RALT |DEL  |
+        //               '-----------'            '-----'           '-----------'
+        base_layer {
             bindings = <
-&kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                             &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp BSPC
-&kp TAB   &kp Q  &kp W    &kp E    &kp R     &kp T                              &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSLH
-&kp ESC   &kp A  &kp S    &kp D    &kp F     &kp G                              &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-&kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B  &kp C_MUTE      &kp C_PP  &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-                 &kp LALT &kp LGUI &kp LCTRL &mo NAV_NUM &kp SPACE  &kp RET   &mo SYMBOLS &sl VSCODE_OS &kp RALT &kp RCTRL
+&kp GRAVE  &kp N1 &kp N2 &kp N3 &kp N4 &kp N5     &kp N6 &kp N7 &kp N8   &kp N9    &kp N0    &kp MINUS
+&kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T      &kp Y  &kp U  &kp I    &kp O     &kp P     &kp BSPC
+&kp ESC    &kp A  &kp S  &kp D  &kp F  &kp G      &kp H  &kp J  &kp K    &kp L     &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B      &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH  &kp RSHFT
+              &tog SHORT &tog NUMPAD                              &caps_word &bt BT_PRV
+                         &kp LGUI &kp LCTRL &lt NAV SPACE     &lt SYM RET &kp RALT &kp DEL
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
         };
 
-        nav_num_layer {
-            // LAYER 1: NAVEGAÇÃO E NÚMEROS (Segura Polegar Esquerdo)
+        // ===================================================================================
+        // LAYER 1 — SYM (segurar polegar direito interno / tecla ENTER)
+        // Símbolos mais usados em JS/PHP/Python/Java/Go/CSS/HTML nas linhas 3 e 4 (home + abaixo),
+        // perto do repouso dos dedos. Linha de números vira F1-F12 (não redundante).
+        // ===================================================================================
+        // ,-----------------------------------.                    ,-----------------------------------.
+        // | F1  | F2  | F3  | F4  | F5  | F6  |                    | F7  | F8  | F9  | F10 | F11 | F12 |
+        // |-----------------------------------|                    |-----------------------------------|
+        // | ___ |  `  |  =  |  +  |  -  |  \  |                    |  |  |  [  |  ]  |  {  |  }  | ___ |
+        // |-----------------------------------|                    |-----------------------------------|
+        // | ___ |  !  |  @  |  #  |  $  |  %  |                    |  ^  |  &  |  (  |  )  |  _  | ___ |
+        // |-----------------------------------|                    |-----------------------------------|
+        // | ___ |  ~  |  <  |  [  |  {  |  <  |                    |  >  |  }  |  ]  |  "  |  '  | ___ |
+        // '-----------------------------------'                    '-----------------------------------'
+        sym_layer {
             bindings = <
-&kp F1    &kp F2 &kp F3 &kp F4 &kp F5 &kp F6                        &kp F7   &kp F8   &kp F9    &kp F10   &kp F11   &kp F12
-&trans    &kp N7 &kp N8 &kp N9 &trans &trans                        &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans    &kp DEL
-&trans    &kp N4 &kp N5 &kp N6 &trans &trans                        &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans    &trans
-&trans    &kp N1 &kp N2 &kp N3 &trans &trans  &trans        &trans  &trans   &trans    &trans    &trans    &trans    &trans
-                 &trans &trans &trans &trans  &trans        &trans  &mo SYSTEM &trans  &trans    &trans
+&kp F1 &kp F2  &kp F3    &kp F4    &kp F5    &kp F6      &kp F7    &kp F8    &kp F9   &kp F10   &kp F11  &kp F12
+&trans &kp GRAVE &kp EQUAL &kp PLUS &kp MINUS &kp BSLH   &kp PIPE  &kp LBKT  &kp RBKT &kp LBRC  &kp RBRC &trans
+&trans &kp EXCL  &kp AT    &kp HASH &kp DLLR  &kp PRCNT  &kp CARET &kp AMPS  &kp LPAR &kp RPAR  &kp UNDER &trans
+&trans &kp TILDE &kp LT    &kp LBKT &kp LBRC  &kp LT     &kp GT    &kp RBRC  &kp RBKT &kp DQT   &kp SQT  &trans
+              &trans &trans                                    &trans &trans
+                     &trans &trans &trans                &trans &trans &trans
             >;
-            sensor-bindings = <&inc_dec_kp LC(EQUAL) LC(MINUS) &inc_dec_kp UP DOWN>;
         };
 
-        symbols_layer {
-            // LAYER 2: SÍMBOLOS PARA PROGRAMAÇÃO (Segura Polegar Direito)
+        // ===================================================================================
+        // LAYER 2 — NAV (segurar polegar esquerdo interno / tecla SPACE)
+        // Setas SEMPRE na mão direita (hjkl, igual ao Vim que você já usa na extensão do VSCode),
+        // + teclas de navegação de texto/edição ao redor. Mão esquerda fica livre (trans) —
+        // dá pra continuar digitando letras normalmente enquanto segura a layer.
+        // O numpad NÃO fica aqui: navegação e numpad quase nunca são usados ao mesmo tempo,
+        // então cada um ganhou sua própria layer (ver NUMPAD abaixo) e os dois puderam ficar
+        // na mão direita sem disputar espaço na home row.
+        // ===================================================================================
+        // ,-----------------------------------.                    ,-----------------------------------.
+        // | ___ | ___ | ___ | ___ | ___ | ___ |                    | ___ | ___ | ___ | ___ | ___ | ___ |
+        // |-----------------------------------|                    |-----------------------------------|
+        // | ___ | ___ | ___ | ___ | ___ | ___ |                    |HOME |PGDN |PGUP | END | DEL | ___ |
+        // |-----------------------------------|                    |-----------------------------------|
+        // | ___ | ___ | ___ | ___ | ___ | ___ |                    |LEFT |DOWN | UP  |RIGHT| ___ | ___ |
+        // |-----------------------------------|                    |-----------------------------------|
+        // | ___ | ___ | ___ | ___ | ___ | ___ |                    | INS | ___ | ___ | ___ | ___ | ___ |
+        // '-----------------------------------'                    '-----------------------------------'
+        nav_layer {
             bindings = <
-&trans    &trans    &trans   &trans   &trans    &trans                      &trans    &trans    &trans   &trans   &trans   &trans
-&trans    &trans    &trans   &kp AMPS &kp STAR  &trans                      &trans    &kp LBKT  &kp RBKT &trans   &trans   &trans
-&trans    &kp EXCL  &kp LT   &kp EQUAL &kp GT   &kp DLLR                    &trans    &kp LBRC  &kp RBRC &trans   &trans   &trans
-&trans    &trans    &trans   &kp MINUS &kp UNDER &trans  &trans      &trans  &trans   &kp LPAR  &kp RPAR &trans   &trans   &trans
-                     &trans   &trans   &trans   &mo SYSTEM &trans      &trans  &trans    &trans    &trans   &trans
+&trans &trans &trans &trans &trans &trans      &trans   &trans    &trans    &trans   &trans &trans
+&trans &trans &trans &trans &trans &trans      &kp HOME &kp PG_DN &kp PG_UP &kp END  &kp DEL &trans
+&trans &trans &trans &trans &trans &trans      &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans &trans
+&trans &trans &trans &trans &trans &trans      &kp INS  &trans    &trans    &trans   &trans &trans
+              &trans &trans                                    &trans &trans
+                     &trans &trans &trans                &trans &trans &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        vscode_os_layer {
-            // LAYER 3: WORKFLOW, VSCODE E OS (Tocar no Polegar Direito para ativar)
+        // ===================================================================================
+        // LAYER 3 — FUNC/ADJUST (automática: SYM + NAV juntos, via conditional_layers)
+        // Bluetooth, mídia, RGB. Reset/Bootloader nos cantos mais distantes -> exige as duas mãos
+        // já ocupadas nos polegares + esticar até o canto, praticamente impossível sem querer.
+        // ===================================================================================
+        func_layer {
             bindings = <
-&trans    &trans       &trans       &trans       &trans       &trans                                     &trans       &trans        &trans        &trans        &trans    &trans
-&trans    &kp LG(N1)   &kp LG(N2)   &kp LG(N3)   &kp LG(N4)   &kp LG(N5)                                 &kp LC(Y)    &kp LC(Z)     &trans        &trans        &trans    &trans
-&trans    &kp LG(LEFT) &kp LG(DOWN) &kp LG(UP)   &kp LG(RIGHT) &kp LG(M)                                  &kp LC(B)    &kp LS(LC(E)) &kp LS(LC(F)) &kp LS(LC(P)) &trans    &trans
-&trans    &trans       &trans       &trans       &trans       &kp LG(T)  &trans      &trans  &trans       &trans        &trans        &trans        &trans    &trans
-                       &trans       &trans       &trans       &trans     &trans      &trans  &trans       &trans        &trans        &trans
+&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_HUI &rgb_ug RGB_BRI &ext_power EP_TOG &trans
+&trans     &trans       &trans       &trans       &trans       &trans           &kp C_PREV       &kp C_NEXT      &kp C_PP        &kp C_VOL_DN    &kp C_VOL_UP      &trans
+&trans     &trans       &trans       &trans       &trans       &trans           &trans           &trans          &trans          &trans          &trans            &trans
+&sys_reset &trans       &trans       &trans       &trans       &trans           &trans           &trans          &trans          &trans          &trans            &bootloader
+              &trans &trans                                    &trans &trans
+                     &trans &trans &trans                &trans &trans &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        system_layer {
-            // LAYER 4: SYSTEM E BLUETOOTH (Segurar Polegar Esq + Polegar Dir)
+        // ===================================================================================
+        // LAYER 4 — SHORT (toggle via TG(4), canto externo da linha extra esquerda)
+        // Esquerda = OS/janelas · Direita = VSCode (placeholders — personalize com seus binds).
+        // Toggle (não momentary) porque aqui você encadeia vários atalhos seguidos sem digitar
+        // texto no meio — diferente de SYM/NAV, que intercalam com digitação normal.
+        // ===================================================================================
+        // ,-----------------------------------.                    ,-----------------------------------.
+        // | ___ |APP1 |APP2 |APP3 |APP4 |APP5 |                    |CmdPal|Termin|Sidebar|Search|___|___|
+        // |-----------------------------------|                    |-----------------------------------|
+        // | ___ |MAXIM|MON^ |MON v|SNAPL|SNAPR|                    |GoDef |QFix  |Rename |___   |___|___|
+        // |-----------------------------------|                    |-----------------------------------|
+        // | ___ |DSKTP|MISS |___  |___  |___  |                    |___   |___   |___    |___   |___|___|
+        // |-----------------------------------|                    |-----------------------------------|
+        // | ___ |___  |___  |___  |___  |___  |                    |___   |___   |___    |___   |___|___|
+        // '-----------------------------------'                    '-----------------------------------'
+        short_layer {
             bindings = <
-&trans     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                       &trans &trans &trans &trans &trans &trans
-&trans     &bt BT_CLR   &trans       &trans       &trans       &trans                                   &trans &trans &trans &trans &trans &trans
-&trans     &ext_power EP_TOG &trans  &trans       &trans       &trans                                   &trans &trans &trans &trans &trans &trans
-&trans     &trans       &trans       &trans       &trans       &trans      &sys_reset &sys_reset &trans &trans &trans &trans &trans &trans
-                        &trans       &trans       &trans       &trans      &bootloader &bootloader &trans &trans &trans &trans
+&trans      &none &none &none &none &none         &kp LC(LS(P)) &kp LC(GRAVE) &kp LC(B) &kp LC(P) &none &none
+&trans      &none &none &none &none &none         &kp F12       &kp LC(DOT)   &kp F2    &none     &none &none
+&trans      &none &none &none &none &none         &none         &none         &none     &none     &none &none
+&trans      &none &none &none &none &none         &none         &none         &none     &none     &none &none
+              &trans &trans                                    &trans &trans
+                     &trans &trans &trans                &trans &trans &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        // ===================================================================================
+        // LAYER 5 — NUMPAD (toggle, tecla dedicada na linha extra — TG(NUMPAD))
+        // Numpad inteiro na mão DIREITA, ocupando as 3 linhas principais — igual a um numpad
+        // físico de verdade (7-8-9 em cima, 4-5-6 na home row, 1-2-3 embaixo, 0 e . no final).
+        // É toggle (não hold) porque digitar um CPF/CNPJ inteiro segurando o polegar seria
+        // cansativo — aperta uma vez pra "entrar no modo numérico", digita os números com
+        // Enter/Backspace do polegar ainda disponíveis, aperta de novo pra sair.
+        // Mão esquerda fica ociosa (trans) — o numpad é, propositalmente, uma mão só,
+        // igual você já usa em qualquer teclado full-size.
+        // ===================================================================================
+        // ,-----------------------------------.                    ,-----------------------------------.
+        // | ___ | ___ | ___ | ___ | ___ | ___ |                    | ___ | ___ | ___ | ___ | ___ | ___ |
+        // |-----------------------------------|                    |-----------------------------------|
+        // | ___ | ___ | ___ | ___ | ___ | ___ |                    |  7  |  8  |  9  |  /  |BSPC | ___ |
+        // |-----------------------------------|                    |-----------------------------------|
+        // | ___ | ___ | ___ | ___ | ___ | ___ |                    |  4  |  5  |  6  |  *  | RET | ___ |
+        // |-----------------------------------|                    |-----------------------------------|
+        // | ___ | ___ | ___ | ___ | ___ | ___ |                    |  1  |  2  |  3  |  0  |  .  | ___ |
+        // '-----------------------------------'                    '-----------------------------------'
+        numpad_layer {
+            bindings = <
+&trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans          &trans   &trans
+&trans &trans &trans &trans &trans &trans      &kp N7 &kp N8 &kp N9 &kp FSLH        &kp BSPC &trans
+&trans &trans &trans &trans &trans &trans      &kp N4 &kp N5 &kp N6 &kp KP_MULTIPLY &kp RET  &trans
+&trans &trans &trans &trans &trans &trans      &kp N1 &kp N2 &kp N3 &kp N0          &kp DOT  &trans
+              &trans &trans                                    &trans &trans
+                     &trans &trans &trans                &trans &trans &trans
+            >;
         };
     };
 };
