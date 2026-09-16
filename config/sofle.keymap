@@ -52,11 +52,11 @@
             // LAYER 0: BASE (Letras QWERTY, polegares otimizados)
 
             bindings = <
-&kp PT_SQT    &kp N1  &kp N2   &kp N3            &kp N4        &kp N5                                           &kp N6       &kp N7     &kp N8      &kp N9   &kp N0    &kp RS(CARET)
-&kp TAB       &kp Q   &kp W    &kp E             &kp R         &kp T                                            &kp Y        &kp U      &kp I       &kp O    &kp P     &kp PT_ACUTE
-&kp LC(PT_C)  &kp A   &kp S    &kp D             &kp F         &kp G                                            &kp H        &kp J      &kp K       &kp L    &kp SEMI  &kp PT_C_CEDILLA
-&kp LC(PT_V)  &kp Z   &kp X    &kp C             &kp V         &kp B             &kp CAPSLOCK    &kp C_MUTE     &kp N        &kp M      &kp COMMA   &kp DOT  &kp FSLH  &kp PT_TILDE
-                      &kp ESC  &kp LEFT_CONTROL  &kp LEFT_ALT  &lt 2 LEFT_SHIFT  &lt 3 SPACE     &kp BACKSPACE  &lt 1 LSHFT  &kp ENTER  &kp DELETE  &mo 4
+&kp PT_SQT      &kp N1  &kp N2        &kp N3        &kp N4        &kp N5                                    &kp N6       &kp N7          &kp N8      &kp N9          &kp N0    &kp RS(CARET)
+&kp TAB         &kp Q   &kp W         &kp E         &kp R         &kp T                                     &kp Y        &kp U           &kp I       &kp O           &kp P     &kp PT_ACUTE
+&kp LCTRL       &kp A   &kp S         &kp D         &kp F         &kp G                                     &kp H        &kp J           &kp K       &kp L           &kp SEMI  &kp PT_C_CEDILLA
+&kp LC(PT_SQT)  &kp Z   &kp X         &kp C         &kp V         &kp B      &kp CAPSLOCK    &kp C_MUTE     &kp N        &kp M           &kp COMMA   &kp DOT         &kp FSLH  &kp PT_TILDE
+                        &kp LC(PT_V)  &kp LA(PT_C)  &kp LEFT_ALT  &lt 2 ESC  &lt 3 SPACE     &kp BACKSPACE  &lt 1 ENTER  &kp LEFT_SHIFT  &kp DELETE  &lt 4 LEFT_GUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
