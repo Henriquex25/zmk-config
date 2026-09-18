@@ -125,10 +125,10 @@
             // LAYER 2: SÍMBOLOS PARA PROGRAMAÇÃO (Segura Polegar Direito)
 
             bindings = <
-&trans  &trans         &trans    &kp PT_AT      &trans    &trans                            &trans        &trans        &trans                   &trans                 &trans  &trans
-&trans  &kp BACKSLASH  &kp PIPE  &kp PT_DOLLAR  &kp STAR  &kp PT_AMPS                       &trans        &kp PT_MINUS  &kp LEFT_BRACKET         &kp RIGHT_BRACKET      &trans  &trans
-&trans  &kp EXCL       &kp LT    &kp PT_UNDER   &kp GT    &arrow_dot_php                    &kp PT_COLON  &kp PT_EQUAL  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans
-&trans  &trans         &trans    &trans         &trans    &array_php      &trans    &trans  &kp PT_HASH   &kp PT_SLASH  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans  &tog 2
+&trans  &trans         &trans    &kp PT_AT      &trans    &trans                            &trans        &trans        &trans                   &trans                 &trans          &trans
+&trans  &kp BACKSLASH  &kp PIPE  &kp PT_DOLLAR  &kp STAR  &kp PT_AMPS                       &trans        &kp PT_MINUS  &kp LEFT_BRACKET         &kp RIGHT_BRACKET      &trans          &trans
+&trans  &kp EXCL       &kp LT    &kp PT_UNDER   &kp GT    &arrow_dot_php                    &kp PT_COLON  &kp PT_EQUAL  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LS(PT_SQT)  &trans
+&trans  &trans         &trans    &trans         &trans    &array_php      &trans    &trans  &kp PT_HASH   &kp PT_SLASH  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans          &tog 2
                        &trans    &trans         &trans    &trans          &trans    &trans  &trans        &trans        &trans                   &trans
             >;
 
