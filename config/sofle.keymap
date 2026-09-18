@@ -97,7 +97,7 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp K_VOL_UP K_VOL_DN>,
+                <&inc_dec_kp K_VOLUME_UP2 K_VOLUME_DOWN2>,
                 <&inc_dec_kp PG_DN PG_UP>;
         };
 
@@ -115,7 +115,7 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp LS(LA(LC(LG(UP)))) LS(LA(LC(LG(DOWN))))>,
+                <&inc_dec_kp LS(LA(LC(PT_U))) LS(LA(LC(PT_D)))>,
                 <&inc_dec_kp UP DOWN>;
         };
 
