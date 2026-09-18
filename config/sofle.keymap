@@ -97,7 +97,7 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp K_VOLUME_UP2 K_VOLUME_DOWN2>,
+                <&inc_dec_kp K_VOL_UP K_VOL_DN>,
                 <&inc_dec_kp PG_DN PG_UP>;
         };
 
@@ -115,7 +115,7 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
+                <&inc_dec_kp LS(LA(LC(LG(PT_U)))) LS(LA(LC(LG(DOWN))))>,
                 <&inc_dec_kp UP DOWN>;
         };
 
@@ -134,7 +134,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>,
-                <&inc_dec_kp PG_UP PG_DN>;
+                <&inc_dec_kp K_SCROLL_DOWN K_SCROLL_UP>;
         };
 
         vscode {
@@ -150,7 +150,9 @@
                 &trans                &trans               &trans            &trans        &trans    &trans  &trans            &trans             &trans             &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings =
+                <&inc_dec_kp K_VOL_UP K_VOL_DN>,
+                <&inc_dec_kp UP DOWN>;
         };
 
         system {
