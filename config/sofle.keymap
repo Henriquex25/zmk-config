@@ -177,6 +177,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &kp PT_N1     &kp PT_N2     &kp PT_N3        &kp PT_MINUS  &trans
                 &trans  &trans  &trans  &trans  &trans    &trans  &trans  &kp N0        &kp PT_DOT    &kp PT_COMMA
             >;
+
+            label = "NUM";
         };
     };
 };
