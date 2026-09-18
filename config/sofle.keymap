@@ -65,18 +65,18 @@
             label = "DELETAR_PALAVRA";
         };
 
-        excluir_linha_cima: excluir_linha_cima {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(UP) &kp END>;
-            label = "EXCLUIR_LINHA_CIMA";
-        };
-
         buscar_favoritos: buscar_favoritos {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(PT_T) &kp PT_ASTERISK &kp SPACE>;
             label = "BUSCAR_FAVORITOS";
+        };
+
+        selecionar_linha: selecionar_linha {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp LS(END)>;
+            label = "SELECIONAR_LINHA";
         };
     };
 
@@ -125,11 +125,11 @@
             // LAYER 2: SÍMBOLOS PARA PROGRAMAÇÃO (Segura Polegar Direito)
 
             bindings = <
-&trans  &trans         &trans    &kp PT_AT      &trans    &trans                            &trans        &trans        &trans                   &trans                 &trans          &trans
-&trans  &kp BACKSLASH  &kp PIPE  &kp PT_DOLLAR  &kp STAR  &kp PT_AMPS                       &trans        &kp PT_MINUS  &kp LEFT_BRACKET         &kp RIGHT_BRACKET      &trans          &trans
-&trans  &kp EXCL       &kp LT    &kp PT_UNDER   &kp GT    &arrow_dot_php                    &kp PT_COLON  &kp PT_EQUAL  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LS(PT_SQT)  &trans
-&trans  &trans         &trans    &trans         &trans    &array_php      &trans    &trans  &kp PT_HASH   &kp PT_SLASH  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans          &tog 2
-                       &trans    &trans         &trans    &trans          &trans    &trans  &trans        &trans        &trans                   &trans
+&trans  &trans         &trans    &kp PT_AT      &trans       &trans                            &trans        &trans        &trans                   &trans                 &trans          &trans
+&trans  &kp BACKSLASH  &kp PIPE  &kp PT_DOLLAR  &kp STAR     &kp PT_AMPS                       &kp PT_PLUS   &kp PT_MINUS  &kp PT_LEFT_BRACE        &kp PT_RIGHT_BRACE     &trans          &trans
+&trans  &kp EXCL       &kp LT    &kp PT_UNDER   &kp GT       &arrow_dot_php                    &kp PT_COLON  &kp PT_EQUAL  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LS(PT_SQT)  &trans
+&trans  &trans         &trans    &kp MINUS      &kp PT_PLUS  &array_php      &trans    &trans  &kp PT_HASH   &kp PT_SLASH  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans          &tog 2
+                       &trans    &trans         &trans       &trans          &trans    &trans  &trans        &trans        &trans                   &trans
             >;
 
             sensor-bindings =
@@ -143,11 +143,11 @@
             // LAYER 3: WORKFLOW, VSCODE E OS (Tocar no Polegar Direito para ativar)
 
             bindings = <
-&trans  &trans  &trans                &trans               &trans            &trans                          &kp LA(PT_X)      &kp LA(F1)         &trans             &trans  &trans  &trans
-&trans  &trans  &trans                &excluir_linha_cima  &trans            &kp LC(HOME)                    &kp LA(HOME)      &trans             &trans             &trans  &trans  &trans
-&trans  &trans  &trans                &deletar_palavra     &kp LC(LS(PT_P))  &kp LC(END)                     &kp LC(LA(UP))    &kp LC(RS(ENTER))  &kp LC(LA(ENTER))  &trans  &trans  &trans
-&trans  &trans  &kp LC(LS(LA(PT_U)))  &trans               &trans            &trans        &trans    &trans  &kp LC(LA(DOWN))  &trans             &trans             &trans  &trans  &tog 3
-                &trans                &trans               &trans            &trans        &trans    &trans  &trans            &trans             &trans             &trans
+&trans  &trans  &trans                &trans            &trans             &trans                          &kp LA(PT_X)      &kp LA(F1)         &trans             &trans            &trans  &trans
+&trans  &trans  &selecionar_linha     &kp LC(LS(PT_J))  &trans             &kp LC(HOME)                    &kp LA(HOME)      &trans             &trans             &trans            &trans  &trans
+&trans  &trans  &trans                &deletar_palavra  &kp LC(LS(ENTER))  &kp LC(END)                     &kp LC(LA(UP))    &kp LC(RS(ENTER))  &kp LC(LA(ENTER))  &kp LC(LS(PT_P))  &trans  &trans
+&trans  &trans  &kp LC(LS(LA(PT_U)))  &trans            &kp LC(LA(ENTER))  &trans        &trans    &trans  &kp LC(LA(DOWN))  &trans             &trans             &trans            &trans  &tog 3
+                &trans                &trans            &trans             &trans        &trans    &trans  &trans            &trans             &trans             &trans
             >;
 
             sensor-bindings =
