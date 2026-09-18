@@ -64,6 +64,20 @@
             bindings = <&kp LC(LEFT) &kp LC(LS(RIGHT)) &kp BACKSPACE>;
             label = "DELETAR_PALAVRA";
         };
+
+        excluir_linha_cima: excluir_linha_cima {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(UP) &kp END>;
+            label = "EXCLUIR_LINHA_CIMA";
+        };
+
+        buscar_favoritos: buscar_favoritos {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(PT_T) &kp PT_ASTERISK &kp SPACE>;
+            label = "BUSCAR_FAVORITOS";
+        };
     };
 
     keymap {
@@ -75,7 +89,7 @@
             // LAYER 0: BASE (Letras QWERTY, polegares otimizados)
 
             bindings = <
-&kp SINGLE_QUOTE  &kp N1  &kp N2            &kp N3            &kp N4        &kp N5                                           &kp N6       &kp N7      &kp N8                &kp N9          &kp N0            &kp PT_ACUTE
+&kp PT_SQT        &kp N1  &kp N2            &kp N3            &kp N4        &kp N5                                           &kp N6       &kp N7      &kp N8                &kp N9          &kp N0            &kp PT_ACUTE
 &kp TAB           &kp Q   &kp W             &kp E             &kp R         &kp T                                            &kp Y        &kp U       &kp I                 &kp O           &kp P             &kp PT_C_CEDILLA
 &kp LEFT_SHIFT    &kp A   &kp S             &kp D             &kp F         &kp G                                            &kp H        &kp J       &kp K                 &kp L           &kp PT_SEMICOLON  &kp PT_TILDE
 &kp LEFT_CONTROL  &kp Z   &kp X             &kp C             &kp V         &kp B      &kp CAPSLOCK    &kp LS(LA(LC(PT_M)))  &kp N        &kp M       &kp COMMA             &kp DOT         &kp PT_QUESTION   &tog 5
@@ -83,7 +97,7 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
                 <&inc_dec_kp PG_DN PG_UP>;
         };
 
@@ -100,7 +114,9 @@
                 &trans                 &trans                   &trans                       &kp LA(LC(LS(PT_L)))  &trans    &trans  &trans  &trans            &trans          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(EQUAL) LC(MINUS) &inc_dec_kp UP DOWN>;
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
+                <&inc_dec_kp UP DOWN>;
         };
 
         symbols {
@@ -125,11 +141,11 @@
             // LAYER 3: WORKFLOW, VSCODE E OS (Tocar no Polegar Direito para ativar)
 
             bindings = <
-&trans  &trans  &trans                &trans            &trans        &trans                          &kp LA(PT_X)      &kp LA(F1)         &trans             &trans  &trans        &trans
-&trans  &trans  &trans                &deletar_palavra  &kp LA(PT_K)  &kp LC(HOME)                    &trans            &trans             &trans             &trans  &kp LA(PT_Z)  &trans
-&trans  &trans  &kp LA(PT_A)          &kp LA(PT_D)      &kp LA(PT_J)  &kp LC(END)                     &kp LC(LA(UP))    &kp LC(RS(ENTER))  &kp LC(LA(ENTER))  &trans  &kp LA(PT_W)  &trans
-&trans  &trans  &kp LC(LS(LA(PT_U)))  &trans            &trans        &trans        &trans    &trans  &kp LC(LA(DOWN))  &trans             &trans             &trans  &trans        &tog 3
-                &trans                &trans            &trans        &trans        &trans    &trans  &trans            &trans             &trans             &trans
+&trans  &trans  &trans                &trans               &trans            &trans                          &kp LA(PT_X)      &kp LA(F1)         &trans             &trans  &trans  &trans
+&trans  &trans  &trans                &excluir_linha_cima  &trans            &kp LC(HOME)                    &kp LA(HOME)      &trans             &trans             &trans  &trans  &trans
+&trans  &trans  &trans                &deletar_palavra     &kp LC(LS(PT_P))  &kp LC(END)                     &kp LC(LA(UP))    &kp LC(RS(ENTER))  &kp LC(LA(ENTER))  &trans  &trans  &trans
+&trans  &trans  &kp LC(LS(LA(PT_U)))  &trans               &trans            &trans        &trans    &trans  &kp LC(LA(DOWN))  &trans             &trans             &trans  &trans  &tog 3
+                &trans                &trans               &trans            &trans        &trans    &trans  &trans            &trans             &trans             &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
