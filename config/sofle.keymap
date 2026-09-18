@@ -82,7 +82,9 @@
                           &kp LC(LS(PT_V))  &kp LC(LS(PT_C))  &kp LEFT_ALT  &lt 2 ESC  &lt 3 SPACE     &kp BACKSPACE         &lt 1 ENTER  &kp DELETE  &kp LC(LS(LA(PT_L)))  &lt 4 LEFT_GUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
+                <&inc_dec_kp PG_DN PG_UP>;
         };
 
         nav {
