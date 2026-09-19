@@ -123,11 +123,11 @@
             // LAYER 1: NAVEGAÇÃO E NÚMEROS (Segura Polegar Esquerdo)
 
             bindings = <
-&kp F1  &kp F2  &kp F3                 &kp F4                   &kp F5                       &kp F6                               &kp F7  &kp F8            &kp F9          &kp F10     &kp F11     &kp F12
-&trans  &none   &kp LA(LC(LG(POUND)))  &kp LA(LC(LG(AT_SIGN)))  &kp LC(LA(LG(EXCLAMATION)))  &buscar_favoritos                    &none   &kp HOME          &kp UP          &kp END     &trans      &trans
-&trans  &none   &none                  &kp LG(PT_M)             &kp LC(LG(LS(UP)))           &trans                               &none   &kp LEFT_ARROW    &kp DOWN        &kp RIGHT   &trans      &kp PRINTSCREEN
-&trans  &none   &none                  &none                    &kp LC(LG(LS(DOWN)))         &trans             &trans    &trans  &trans  &kp C_PLAY_PAUSE  &kp C_PREVIOUS  &kp C_NEXT  &kp K_CALC  &tog 1
-                &trans                 &trans                   &trans                       &trans             &trans    &trans  &trans  &trans            &trans          &trans
+&kp F1  &kp F2  &kp F3                 &kp F4                   &kp F5                       &kp F6                               &kp F7     &kp F8            &kp F9          &kp F10     &kp F11     &kp F12
+&trans  &none   &kp LA(LC(LG(POUND)))  &kp LA(LC(LG(AT_SIGN)))  &kp LC(LA(LG(EXCLAMATION)))  &buscar_favoritos                    &none      &kp HOME          &kp UP          &kp END     &trans      &tog 1
+&trans  &none   &none                  &kp LG(PT_M)             &kp LC(LG(LS(UP)))           &trans                               &trans     &kp LEFT_ARROW    &kp DOWN        &kp RIGHT   &trans      &kp PRINTSCREEN
+&trans  &none   &none                  &none                    &kp LC(LG(LS(DOWN)))         &kp BACKSPACE      &trans    &trans  &kp SPACE  &kp C_PLAY_PAUSE  &kp C_PREVIOUS  &kp C_NEXT  &kp K_CALC  &trans
+                &trans                 &trans                   &trans                       &trans             &trans    &trans  &trans     &trans            &trans          &trans
             >;
 
             sensor-bindings =
@@ -144,7 +144,7 @@
 &trans  &trans         &trans    &kp PT_AT      &trans        &trans                            &trans        &trans        &trans                   &trans                 &trans          &trans
 &trans  &kp BACKSLASH  &kp PIPE  &kp PT_DOLLAR  &kp STAR      &kp PT_AMPS                       &kp PT_PLUS   &kp PT_MINUS  &kp PT_LEFT_BRACE        &kp PT_RIGHT_BRACE     &trans          &trans
 &trans  &kp EXCL       &kp LT    &kp PT_UNDER   &kp GT        &arrow_dot_php                    &kp PT_SLASH  &kp PT_EQUAL  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LS(PT_SQT)  &trans
-&trans  &trans         &trans    &kp PT_PLUS    &kp PT_MINUS  &array_php      &trans    &trans  &kp PT_HASH   &kp PT_COLON  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans          &tog 2
+&tog 2  &trans         &trans    &kp PT_PLUS    &kp PT_MINUS  &array_php      &trans    &trans  &kp PT_HASH   &kp PT_COLON  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans          &tog 2
                        &trans    &trans         &trans        &trans          &trans    &trans  &trans        &trans        &trans                   &trans
             >;
 
@@ -159,10 +159,10 @@
             // LAYER 3: WORKFLOW, VSCODE E OS (Tocar no Polegar Direito para ativar)
 
             bindings = <
-&trans  &trans  &trans                &trans               &trans             &trans                          &kp LA(PT_X)      &kp LA(F1)         &trans             &trans            &trans  &trans
+&trans  &kp F1  &kp F2                &kp F3               &kp F4             &kp F5                          &kp LA(PT_X)      &kp LA(F1)         &trans             &trans            &trans  &trans
 &trans  &trans  &kp LC(LS(PT_J))      &selecionar_linha    &trans             &kp LC(HOME)                    &kp LA(HOME)      &trans             &trans             &trans            &trans  &trans
 &trans  &trans  &trans                &selecionar_palavra  &kp LC(LS(ENTER))  &kp LC(END)                     &kp LC(LA(UP))    &kp LC(RS(ENTER))  &kp LC(LA(ENTER))  &kp LC(LS(PT_P))  &trans  &trans
-&trans  &trans  &kp LC(LS(LA(PT_U)))  &trans               &kp LC(LA(ENTER))  &trans        &trans    &trans  &kp LC(LA(DOWN))  &trans             &trans             &trans            &trans  &tog 3
+&tog 3  &trans  &kp LC(LS(LA(PT_U)))  &trans               &kp LC(LA(ENTER))  &trans        &trans    &trans  &kp LC(LA(DOWN))  &trans             &trans             &trans            &trans  &tog 3
                 &trans                &trans               &trans             &trans        &trans    &trans  &trans            &trans             &trans             &trans
             >;
 
