@@ -22,7 +22,7 @@
 
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <13 14>;
+            key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
 
@@ -30,7 +30,7 @@
 
         combo_enter {
             timeout-ms = <50>;
-            key-positions = <31 32>;
+            key-positions = <40 41>;
             bindings = <&kp RET>;
         };
 
@@ -80,6 +80,22 @@
         };
     };
 
+    behaviors {
+        copiar: copiar {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COPIAR";
+            #binding-cells = <0>;
+            bindings = <&kp LC(PT_C)>, <&kp LC(LS(PT_C))>;
+        };
+
+        single_quote_copyQ: single_quote_copyQ {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SINGLE_QUOTE_COPYQ";
+            #binding-cells = <0>;
+            bindings = <&kp PT_SQT>, <&kp LA(DELETE)>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -89,11 +105,11 @@
             // LAYER 0: BASE (Letras QWERTY, polegares otimizados)
 
             bindings = <
-&kp PT_SQT        &kp N1  &kp N2        &kp N3        &kp N4        &kp N5                                           &kp N6       &kp N7      &kp N8                &kp N9          &kp N0            &kp PT_ACUTE
-&kp TAB           &kp Q   &kp W         &kp E         &kp R         &kp T                                            &kp Y        &kp U       &kp I                 &kp O           &kp P             &kp PT_C_CEDILLA
-&kp LEFT_SHIFT    &kp A   &kp S         &kp D         &kp F         &kp G                                            &kp H        &kp J       &kp K                 &kp L           &kp PT_SEMICOLON  &kp PT_TILDE
-&kp LEFT_CONTROL  &kp Z   &kp X         &kp C         &kp V         &kp B      &kp CAPSLOCK    &kp LS(LA(LC(PT_M)))  &kp N        &kp M       &kp COMMA             &kp DOT         &kp PT_QUESTION   &tog 5
-                          &kp LC(PT_V)  &kp LC(PT_C)  &kp LEFT_ALT  &lt 2 ESC  &lt 3 SPACE     &kp BACKSPACE         &lt 1 ENTER  &kp DELETE  &kp LC(LS(LA(PT_L)))  &lt 4 LEFT_GUI
+&single_quote_copyQ  &kp N1  &kp N2        &kp N3   &kp N4        &kp N5                                           &kp N6       &kp N7      &kp N8                &kp N9          &kp N0            &kp PT_ACUTE
+&kp TAB              &kp Q   &kp W         &kp E    &kp R         &kp T                                            &kp Y        &kp U       &kp I                 &kp O           &kp P             &kp PT_C_CEDILLA
+&kp LEFT_SHIFT       &kp A   &kp S         &kp D    &kp F         &kp G                                            &kp H        &kp J       &kp K                 &kp L           &kp PT_SEMICOLON  &kp PT_TILDE
+&kp LEFT_CONTROL     &kp Z   &kp X         &kp C    &kp V         &kp B      &kp CAPSLOCK    &kp LS(LA(LC(PT_M)))  &kp N        &kp M       &kp COMMA             &kp DOT         &kp PT_QUESTION   &tog 5
+                             &kp LC(PT_V)  &copiar  &kp LEFT_ALT  &lt 2 ESC  &lt 3 SPACE     &kp BACKSPACE         &lt 1 ENTER  &kp DELETE  &kp LC(LS(LA(PT_L)))  &lt 4 LEFT_GUI
             >;
 
             sensor-bindings =
@@ -125,11 +141,11 @@
             // LAYER 2: SÍMBOLOS PARA PROGRAMAÇÃO (Segura Polegar Direito)
 
             bindings = <
-&trans  &trans         &trans    &kp PT_AT      &trans       &trans                            &trans        &trans        &trans                   &trans                 &trans          &trans
-&trans  &kp BACKSLASH  &kp PIPE  &kp PT_DOLLAR  &kp STAR     &kp PT_AMPS                       &kp PT_PLUS   &kp PT_MINUS  &kp PT_LEFT_BRACE        &kp PT_RIGHT_BRACE     &trans          &trans
-&trans  &kp EXCL       &kp LT    &kp PT_UNDER   &kp GT       &arrow_dot_php                    &kp PT_COLON  &kp PT_EQUAL  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LS(PT_SQT)  &trans
-&trans  &trans         &trans    &kp MINUS      &kp PT_PLUS  &array_php      &trans    &trans  &kp PT_HASH   &kp PT_SLASH  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans          &tog 2
-                       &trans    &trans         &trans       &trans          &trans    &trans  &trans        &trans        &trans                   &trans
+&trans  &trans         &trans    &kp PT_AT      &trans        &trans                            &trans        &trans        &trans                   &trans                 &trans          &trans
+&trans  &kp BACKSLASH  &kp PIPE  &kp PT_DOLLAR  &kp STAR      &kp PT_AMPS                       &kp PT_PLUS   &kp PT_MINUS  &kp PT_LEFT_BRACE        &kp PT_RIGHT_BRACE     &trans          &trans
+&trans  &kp EXCL       &kp LT    &kp PT_UNDER   &kp GT        &arrow_dot_php                    &kp PT_SLASH  &kp PT_EQUAL  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LS(PT_SQT)  &trans
+&trans  &trans         &trans    &kp PT_PLUS    &kp PT_MINUS  &array_php      &trans    &trans  &kp PT_HASH   &kp PT_COLON  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans          &tog 2
+                       &trans    &trans         &trans        &trans          &trans    &trans  &trans        &trans        &trans                   &trans
             >;
 
             sensor-bindings =
