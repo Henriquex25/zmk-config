@@ -58,10 +58,10 @@
             label = "ARRAY";
         };
 
-        deletar_palavra: deletar_palavra {
+        selecionar_palavra: deletar_palavra {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(LEFT) &kp LC(LS(RIGHT)) &kp BACKSPACE>;
+            bindings = <&kp LC(LEFT) &kp LC(LS(RIGHT))>;
             label = "DELETAR_PALAVRA";
         };
 
@@ -89,11 +89,11 @@
             // LAYER 0: BASE (Letras QWERTY, polegares otimizados)
 
             bindings = <
-&kp PT_SQT        &kp N1  &kp N2            &kp N3            &kp N4        &kp N5                                           &kp N6       &kp N7      &kp N8                &kp N9          &kp N0            &kp PT_ACUTE
-&kp TAB           &kp Q   &kp W             &kp E             &kp R         &kp T                                            &kp Y        &kp U       &kp I                 &kp O           &kp P             &kp PT_C_CEDILLA
-&kp LEFT_SHIFT    &kp A   &kp S             &kp D             &kp F         &kp G                                            &kp H        &kp J       &kp K                 &kp L           &kp PT_SEMICOLON  &kp PT_TILDE
-&kp LEFT_CONTROL  &kp Z   &kp X             &kp C             &kp V         &kp B      &kp CAPSLOCK    &kp LS(LA(LC(PT_M)))  &kp N        &kp M       &kp COMMA             &kp DOT         &kp PT_QUESTION   &tog 5
-                          &kp LC(LS(PT_V))  &kp LC(LS(PT_C))  &kp LEFT_ALT  &lt 2 ESC  &lt 3 SPACE     &kp BACKSPACE         &lt 1 ENTER  &kp DELETE  &kp LC(LS(LA(PT_L)))  &lt 4 LEFT_GUI
+&kp PT_SQT        &kp N1  &kp N2        &kp N3        &kp N4        &kp N5                                           &kp N6       &kp N7      &kp N8                &kp N9          &kp N0            &kp PT_ACUTE
+&kp TAB           &kp Q   &kp W         &kp E         &kp R         &kp T                                            &kp Y        &kp U       &kp I                 &kp O           &kp P             &kp PT_C_CEDILLA
+&kp LEFT_SHIFT    &kp A   &kp S         &kp D         &kp F         &kp G                                            &kp H        &kp J       &kp K                 &kp L           &kp PT_SEMICOLON  &kp PT_TILDE
+&kp LEFT_CONTROL  &kp Z   &kp X         &kp C         &kp V         &kp B      &kp CAPSLOCK    &kp LS(LA(LC(PT_M)))  &kp N        &kp M       &kp COMMA             &kp DOT         &kp PT_QUESTION   &tog 5
+                          &kp LC(PT_V)  &kp LC(PT_C)  &kp LEFT_ALT  &lt 2 ESC  &lt 3 SPACE     &kp BACKSPACE         &lt 1 ENTER  &kp DELETE  &kp LC(LS(LA(PT_L)))  &lt 4 LEFT_GUI
             >;
 
             sensor-bindings =
@@ -143,11 +143,11 @@
             // LAYER 3: WORKFLOW, VSCODE E OS (Tocar no Polegar Direito para ativar)
 
             bindings = <
-&trans  &trans  &trans                &trans            &trans             &trans                          &kp LA(PT_X)      &kp LA(F1)         &trans             &trans            &trans  &trans
-&trans  &trans  &selecionar_linha     &kp LC(LS(PT_J))  &trans             &kp LC(HOME)                    &kp LA(HOME)      &trans             &trans             &trans            &trans  &trans
-&trans  &trans  &trans                &deletar_palavra  &kp LC(LS(ENTER))  &kp LC(END)                     &kp LC(LA(UP))    &kp LC(RS(ENTER))  &kp LC(LA(ENTER))  &kp LC(LS(PT_P))  &trans  &trans
-&trans  &trans  &kp LC(LS(LA(PT_U)))  &trans            &kp LC(LA(ENTER))  &trans        &trans    &trans  &kp LC(LA(DOWN))  &trans             &trans             &trans            &trans  &tog 3
-                &trans                &trans            &trans             &trans        &trans    &trans  &trans            &trans             &trans             &trans
+&trans  &trans  &trans                &trans               &trans             &trans                          &kp LA(PT_X)      &kp LA(F1)         &trans             &trans            &trans  &trans
+&trans  &trans  &kp LC(LS(PT_J))      &selecionar_linha    &trans             &kp LC(HOME)                    &kp LA(HOME)      &trans             &trans             &trans            &trans  &trans
+&trans  &trans  &trans                &selecionar_palavra  &kp LC(LS(ENTER))  &kp LC(END)                     &kp LC(LA(UP))    &kp LC(RS(ENTER))  &kp LC(LA(ENTER))  &kp LC(LS(PT_P))  &trans  &trans
+&trans  &trans  &kp LC(LS(LA(PT_U)))  &trans               &kp LC(LA(ENTER))  &trans        &trans    &trans  &kp LC(LA(DOWN))  &trans             &trans             &trans            &trans  &tog 3
+                &trans                &trans               &trans             &trans        &trans    &trans  &trans            &trans             &trans             &trans
             >;
 
             sensor-bindings =
