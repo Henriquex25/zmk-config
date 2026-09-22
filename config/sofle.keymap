@@ -145,11 +145,11 @@
             // LAYER 2: SÍMBOLOS PARA PROGRAMAÇÃO (Segura Polegar Direito)
 
             bindings = <
-&tog 2  &trans         &trans    &kp PT_AT      &trans        &trans                            &trans        &trans        &trans                   &trans                 &trans          &trans
-&trans  &kp BACKSLASH  &kp PIPE  &kp PT_DOLLAR  &kp STAR      &kp PT_AMPS                       &kp PT_PLUS   &kp PT_MINUS  &kp PT_LEFT_BRACE        &kp PT_RIGHT_BRACE     &trans          &trans
-&trans  &kp EXCL       &kp LT    &kp PT_UNDER   &kp GT        &arrow_dot_php                    &kp PT_SLASH  &kp PT_EQUAL  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LS(PT_SQT)  &trans
-&trans  &trans         &trans    &kp PT_PLUS    &kp PT_MINUS  &array_php      &trans    &trans  &kp PT_HASH   &kp PT_COLON  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans          &trans
-                       &trans    &trans         &trans        &trans          &trans    &trans  &trans        &trans        &trans                   &trans
+&tog 2  &trans         &trans       &kp PT_AT      &trans        &trans                            &trans        &trans        &trans                   &trans                 &trans          &trans
+&trans  &kp BACKSLASH  &kp PT_PIPE  &kp PT_DOLLAR  &kp STAR      &kp PT_AMPS                       &kp PT_PLUS   &kp PT_MINUS  &kp PT_LEFT_BRACE        &kp PT_RIGHT_BRACE     &trans          &trans
+&trans  &kp EXCL       &kp LT       &kp PT_UNDER   &kp GT        &arrow_dot_php                    &kp PT_SLASH  &kp PT_EQUAL  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LS(PT_SQT)  &trans
+&trans  &trans         &trans       &kp PT_PLUS    &kp PT_MINUS  &array_php      &trans    &trans  &kp PT_HASH   &kp PT_COLON  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans          &trans
+                       &trans       &trans         &trans        &trans          &trans    &trans  &trans        &trans        &trans                   &trans
             >;
 
             sensor-bindings =
@@ -163,11 +163,11 @@
             // LAYER 3: WORKFLOW, VSCODE E OS (Tocar no Polegar Direito para ativar)
 
             bindings = <
-&tog 3  &kp F1  &kp F2                &kp F3               &kp F4             &kp F5                           &kp LA(PT_X)      &kp LA(F1)         &trans  &trans            &trans  &trans
-&trans  &trans  &kp LC(LS(PT_J))      &selecionar_linha    &trans             &kp LC(HOME)                     &kp LA(HOME)      &trans             &trans  &trans            &trans  &trans
-&trans  &trans  &trans                &selecionar_palavra  &kp LC(LS(ENTER))  &kp LC(END)                      &kp LC(LA(UP))    &kp LC(RS(ENTER))  &trans  &kp LC(LS(PT_P))  &trans  &trans
-&tog 3  &trans  &kp LC(LS(LA(PT_U)))  &trans               &kp LC(LA(ENTER))  &kp BACKSPACE  &trans    &trans  &kp LC(LA(DOWN))  &kp LA(LC(ENTER))  &trans  &trans            &trans  &tog 3
-                &trans                &trans               &trans             &trans         &trans    &trans  &trans            &trans             &trans  &trans
+&tog 3  &kp F1            &kp F2                &kp F3               &kp F4             &kp F5                           &kp LA(PT_X)      &kp LA(F1)         &trans  &trans            &trans  &trans
+&trans  &kp LA(PT_MINUS)  &kp LC(LS(PT_J))      &selecionar_linha    &trans             &kp LC(HOME)                     &kp LA(HOME)      &trans             &trans  &trans            &trans  &trans
+&trans  &kp LA(PT_EQUAL)  &trans                &selecionar_palavra  &kp LC(LS(ENTER))  &kp LC(END)                      &kp LC(LA(UP))    &kp LC(RS(ENTER))  &trans  &kp LC(LS(PT_P))  &trans  &trans
+&tog 3  &trans            &kp LC(LS(LA(PT_U)))  &trans               &kp LC(LA(ENTER))  &kp BACKSPACE  &trans    &trans  &kp LC(LA(DOWN))  &kp LA(LC(ENTER))  &trans  &trans            &trans  &tog 3
+                          &trans                &trans               &trans             &trans         &trans    &trans  &trans            &trans             &trans  &trans
             >;
 
             sensor-bindings =
