@@ -206,11 +206,11 @@
 
         NUM {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &kp PT_COLON  &kp PT_SLASH  &kp PT_ASTERISK  &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &kp PT_N7     &kp PT_N8     &kp PT_N9        &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &kp PT_N4     &kp PT_N5     &kp PT_N6        &kp PT_PLUS   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &kp PT_N1     &kp PT_N2     &kp PT_N3        &kp PT_MINUS  &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &kp N0        &kp PT_DOT    &kp PT_COMMA
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans        &trans     &trans     &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp PT_SLASH  &kp PT_N7  &kp PT_N8  &kp PT_N9     &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp PT_COLON  &kp PT_N4  &kp PT_N5  &kp PT_N6     &kp PT_PLUS   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp PT_DOT    &kp PT_N1  &kp PT_N2  &kp PT_N3     &kp PT_MINUS  &trans
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans        &kp N0     &trans     &kp PT_COMMA
             >;
 
             label = "NUM";
