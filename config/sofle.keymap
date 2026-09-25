@@ -214,7 +214,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        NUM {
+        num {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans        &trans     &trans        &trans      &trans        &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans        &kp PT_N7  &kp PT_N8     &kp PT_N9   &trans        &trans
@@ -226,19 +226,31 @@
             label = "NUM";
         };
 
-        Game {
+        game {
             bindings = <
-&kp CAPSLOCK  &thg F1 PT_N1   &thg F2 PT_N2  &thg F3 PT_N3  &thg F4 PT_N4         &thg F5 PT_N5                                          &thg F6 PT_N6  &thg F7 PT_N7  &thg F8 PT_N8  &thg F9 PT_N9  &kp N0           &kp MINUS
-&kp PT_T      &kp TAB         &kp PT_Q       &kp PT_W       &kp PT_E              &kp PT_R                                               &kp Y          &kp U          &kp I          &kp O          &kp P            &kp PT_ACUTE
-&kp PT_F      &kp LEFT_SHIFT  &kp PT_A       &kp PT_S       &kp PT_D              &kp G                                                  &kp H          &kp J          &kp K          &kp L          &kp SEMI         &kp PT_TILDE
-&kp PT_Z      &kp LCTRL       &kp X          &kp C          &kp V                 &kp B                &kp LG(LA(PT_K))    &tog 6        &kp N          &kp M          &kp COMMA      &kp DOT        &kp PT_QUESTION  &kp PT_C_CEDILLA
-                              &kp LEFT_ALT   &kp PT_ACUTE   &kp PT_RIGHT_BRACKET  &kp PT_LEFT_BRACKET  &kp PT_SPACE        &kp PT_SPACE  &kp ENTER      &kp ESCAPE     &kp LGUI       &none
+&kp CAPSLOCK  &kp PT_N1       &kp PT_N2     &kp PT_N3            &kp PT_N4             &kp PT_N5                                    &kp PT_N6  &kp PT_N7   &kp PT_N8  &kp PT_N9  &kp N0           &kp MINUS
+&kp PT_T      &kp TAB         &kp PT_Q      &kp PT_W             &kp PT_E              &kp PT_R                                     &kp Y      &kp U       &kp I      &kp O      &kp P            &kp PT_ACUTE
+&kp PT_F      &kp LEFT_SHIFT  &kp PT_A      &kp PT_S             &kp PT_D              &kp G                                        &kp H      &kp J       &kp K      &kp L      &kp SEMI         &kp PT_TILDE
+&kp PT_Z      &kp LCTRL       &kp X         &kp C                &kp V                 &kp B      &kp LG(LA(PT_K))    &tog 6        &kp N      &kp M       &kp COMMA  &kp DOT    &kp PT_QUESTION  &kp PT_C_CEDILLA
+                              &kp LEFT_ALT  &kp PT_LEFT_BRACKET  &kp PT_RIGHT_BRACKET  &mo 7      &kp PT_SPACE        &kp PT_SPACE  &kp ENTER  &kp ESCAPE  &kp LGUI   &none
             >;
 
             label = "Game";
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
                 <&inc_dec_kp LS(LA(LC(UP))) LS(LA(LC(DOWN_ARROW)))>;
+        };
+
+        game_2 {
+            bindings = <
+&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans   &trans
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "game_2";
         };
     };
 };
