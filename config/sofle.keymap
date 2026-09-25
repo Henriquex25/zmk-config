@@ -121,7 +121,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        tpg: tap_hold_game {
+        thg: tap_hold_game {
             compatible = "zmk,behavior-hold-tap";
             label = "TAP_HOLD_GAME";
             #binding-cells = <2>;
