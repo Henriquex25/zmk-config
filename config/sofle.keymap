@@ -174,8 +174,8 @@
         symbols {
             display-name = "SYMBOLS";
             bindings = <
-&tog 2  &kp F1         &kp F2       &kp F3         &kp F4        &kp F5                            &trans        &trans        &kp PT_AT                &trans                 &trans          &trans
-&trans  &kp BACKSLASH  &kp PT_PIPE  &kp PT_DOLLAR  &kp STAR      &kp PT_AMPS                       &kp PT_PLUS   &kp PT_MINUS  &kp PT_LEFT_BRACE        &kp PT_RIGHT_BRACE     &trans          &trans
+&kp F1  &kp F2         &kp F3       &kp F4         &kp F5        &kp F6                            &trans        &trans        &kp PT_AT                &trans                 &trans          &trans
+&tog 2  &kp BACKSLASH  &kp PT_PIPE  &kp PT_DOLLAR  &kp STAR      &kp PT_AMPS                       &kp PT_PLUS   &kp PT_MINUS  &kp PT_LEFT_BRACE        &kp PT_RIGHT_BRACE     &trans          &trans
 &trans  &kp EXCL       &kp LT       &kp PT_UNDER   &kp GT        &arrow_dot_php                    &kp PT_SLASH  &kp PT_COLON  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LS(PT_SQT)  &trans
 &trans  &trans         &trans       &kp PT_PLUS    &kp PT_MINUS  &array_php      &trans    &trans  &kp PT_HASH   &kp PT_EQUAL  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans          &trans
                        &trans       &trans         &trans        &trans          &trans    &trans  &kp PT_SPACE  &trans        &trans                   &trans
@@ -189,8 +189,8 @@
         vscode {
             display-name = "VSCODE";
             bindings = <
-&tog 3  &kp F1            &kp F2                &kp F3               &kp F4             &kp F5                          &kp LA(PT_X)      &kp LA(F1)         &trans        &trans            &trans                &kp LC(F8)
-&trans  &kp LA(PT_MINUS)  &kp LC(LS(PT_J))      &selecionar_linha    &trans             &kp LC(HOME)                    &kp LA(HOME)      &kp LA(PT_W)       &kp LA(PT_A)  &kp LA(PT_Z)      &kp LS(LA(LC(PT_U)))  &trans
+&kp F1  &kp F2            &kp F3                &kp F4               &kp F5             &kp F6                          &kp LA(PT_X)      &kp LA(F1)         &trans        &trans            &trans                &kp LC(F8)
+&tog 3  &kp LA(PT_MINUS)  &kp LC(LS(PT_J))      &selecionar_linha    &trans             &kp LC(HOME)                    &kp LA(HOME)      &kp LA(PT_W)       &kp LA(PT_A)  &kp LA(PT_Z)      &kp LS(LA(LC(PT_U)))  &trans
 &trans  &kp LA(PT_EQUAL)  &trans                &selecionar_palavra  &kp LC(LS(ENTER))  &kp LC(END)                     &kp LC(LA(UP))    &kp LC(RS(ENTER))  &kp LC(PT_E)  &kp LC(LS(PT_P))  &trans                &trans
 &trans  &trans            &kp LC(LS(LA(PT_U)))  &trans               &kp LC(LA(ENTER))  &trans        &trans    &trans  &kp LC(LA(DOWN))  &kp LA(LC(ENTER))  &kp LA(PT_P)  &trans            &trans                &trans
                           &trans                &trans               &trans             &trans        &trans    &trans  &trans            &trans             &trans        &trans
@@ -228,11 +228,11 @@
 
         game {
             bindings = <
-&kp CAPSLOCK  &kp PT_N1       &kp PT_N2     &kp PT_N3            &kp PT_N4             &kp PT_N5                                    &kp PT_N6  &kp PT_N7   &kp PT_N8  &kp PT_N9  &kp N0           &kp MINUS
-&kp PT_T      &kp TAB         &kp PT_Q      &kp PT_W             &kp PT_E              &kp PT_R                                     &kp Y      &kp U       &kp I      &kp O      &kp P            &kp PT_ACUTE
-&kp PT_F      &kp LEFT_SHIFT  &kp PT_A      &kp PT_S             &kp PT_D              &kp G                                        &kp H      &kp J       &kp K      &kp L      &kp SEMI         &kp PT_TILDE
-&kp PT_Z      &kp LCTRL       &kp X         &kp C                &kp V                 &kp B      &kp LG(LA(PT_K))    &tog 6        &kp N      &kp M       &kp COMMA  &kp DOT    &kp PT_QUESTION  &kp PT_C_CEDILLA
-                              &kp LEFT_ALT  &kp PT_LEFT_BRACKET  &kp PT_RIGHT_BRACKET  &mo 7      &kp PT_SPACE        &kp PT_SPACE  &kp ENTER  &kp ESCAPE  &kp LGUI   &none
+&kp CAPSLOCK  &kp PT_N1       &kp PT_N2     &kp PT_N3            &kp PT_N4  &kp PT_N5                                               &kp PT_N6  &kp PT_N7   &kp PT_N8  &kp PT_N9  &kp N0           &kp MINUS
+&kp PT_T      &kp TAB         &kp PT_Q      &kp PT_W             &kp PT_E   &kp PT_R                                                &kp Y      &kp U       &kp I      &kp O      &kp P            &kp PT_ACUTE
+&kp PT_F      &kp LEFT_SHIFT  &kp PT_A      &kp PT_S             &kp PT_D   &kp G                                                   &kp H      &kp J       &kp K      &kp L      &kp SEMI         &kp PT_TILDE
+&kp PT_Z      &kp LCTRL       &kp X         &kp C                &kp V      &kp B                 &kp LG(LA(PT_K))    &tog 6        &kp N      &kp M       &kp COMMA  &kp DOT    &kp PT_QUESTION  &kp PT_C_CEDILLA
+                              &kp LEFT_ALT  &kp PT_LEFT_BRACKET  &mo 7      &kp PT_RIGHT_BRACKET  &kp PT_SPACE        &kp PT_SPACE  &kp ENTER  &kp ESCAPE  &kp LGUI   &none
             >;
 
             label = "Game";
@@ -243,11 +243,11 @@
 
         game_2 {
             bindings = <
-&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans   &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&kp F1   &kp F2  &kp F3   &kp F4   &kp F5   &kp F6                     &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&kp F19  &trans  &trans   &trans   &trans   &kp F13                    &trans  &trans  &trans  &trans   &trans   &trans
+&kp F20  &trans  &trans   &trans   &trans   &kp F14                    &trans  &trans  &trans  &trans   &trans   &trans
+&kp F21  &trans  &kp F18  &kp F17  &kp F16  &kp F15  &trans    &trans  &trans  &trans  &trans  &trans   &trans   &trans
+                 &trans   &trans   &trans   &trans   &trans    &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "game_2";
