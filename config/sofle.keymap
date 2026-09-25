@@ -121,6 +121,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
         thg: tap_hold_game {
             compatible = "zmk,behavior-hold-tap";
             label = "TAP_HOLD_GAME";
@@ -128,7 +129,6 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-        
             bindings = <&kp>, <&kp>;
         };
     };
@@ -228,11 +228,11 @@
 
         Game {
             bindings = <
-&kp CAPSLOCK  &hm F1 PT_N1    &hm F2 PT_N2  &hm F3 PT_N3  &hm F4 PT_N4          &hm F5 PT_N5                                           &hm F6 PT_N6  &hm F7 PT_N7  &hm F8 PT_N8  &hm F9 PT_N9  &kp N0           &kp MINUS
-&kp PT_T      &kp TAB         &kp PT_Q      &kp PT_W      &kp PT_E              &kp PT_R                                               &kp Y         &kp U         &kp I         &kp O         &kp P            &kp PT_ACUTE
-&kp PT_F      &kp LEFT_SHIFT  &kp PT_A      &kp PT_S      &kp PT_D              &kp G                                                  &kp H         &kp J         &kp K         &kp L         &kp SEMI         &kp PT_TILDE
-&kp PT_Z      &kp LCTRL       &kp X         &kp C         &kp V                 &kp B                &kp LG(LA(PT_K))    &tog 6        &kp N         &kp M         &kp COMMA     &kp DOT       &kp PT_QUESTION  &kp PT_C_CEDILLA
-                              &kp LEFT_ALT  &kp PT_ACUTE  &kp PT_RIGHT_BRACKET  &kp PT_LEFT_BRACKET  &kp PT_SPACE        &kp PT_SPACE  &kp ENTER     &kp ESCAPE    &kp LGUI      &none
+&kp CAPSLOCK  &thg F1 PT_N1   &thg F2 PT_N2  &thg F3 PT_N3  &thg F4 PT_N4         &thg F5 PT_N5                                          &thg F6 PT_N6  &thg F7 PT_N7  &thg F8 PT_N8  &thg F9 PT_N9  &kp N0           &kp MINUS
+&kp PT_T      &kp TAB         &kp PT_Q       &kp PT_W       &kp PT_E              &kp PT_R                                               &kp Y          &kp U          &kp I          &kp O          &kp P            &kp PT_ACUTE
+&kp PT_F      &kp LEFT_SHIFT  &kp PT_A       &kp PT_S       &kp PT_D              &kp G                                                  &kp H          &kp J          &kp K          &kp L          &kp SEMI         &kp PT_TILDE
+&kp PT_Z      &kp LCTRL       &kp X          &kp C          &kp V                 &kp B                &kp LG(LA(PT_K))    &tog 6        &kp N          &kp M          &kp COMMA      &kp DOT        &kp PT_QUESTION  &kp PT_C_CEDILLA
+                              &kp LEFT_ALT   &kp PT_ACUTE   &kp PT_RIGHT_BRACKET  &kp PT_LEFT_BRACKET  &kp PT_SPACE        &kp PT_SPACE  &kp ENTER      &kp ESCAPE     &kp LGUI       &none
             >;
 
             label = "Game";
