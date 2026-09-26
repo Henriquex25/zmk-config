@@ -225,7 +225,7 @@
                               &kp LEFT_ALT  &kp PT_LEFT_BRACKET  &mo 7      &kp PT_RIGHT_BRACKET  &kp PT_SPACE        &kp PT_SPACE  &kp ENTER  &kp ESCAPE  &kp LGUI   &none
             >;
 
-            label = "Game";
+            label = "GAME";
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
                 <&inc_dec_kp LS(LA(LC(UP))) LS(LA(LC(DOWN_ARROW)))>;
@@ -240,7 +240,7 @@
                  &trans   &trans   &trans   &trans   &trans    &trans  &trans  &trans  &trans  &trans
             >;
 
-            label = "game_2";
+            label = "GAME 2";
         };
     };
 };
