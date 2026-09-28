@@ -227,8 +227,8 @@
 
             label = "GAME";
             sensor-bindings =
-                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp LS(LA(LC(UP))) LS(LA(LC(DOWN_ARROW)))>;
+                <&inc_dec_kp PAGE_UP PAGE_DOWN>,
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         game_2 {
