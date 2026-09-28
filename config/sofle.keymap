@@ -28,7 +28,7 @@
 
         combo_enter_left {
             timeout-ms = <50>;
-            key-positions = <26 28>;
+            key-positions = <38 40>;
             bindings = <&kp RET>;
         };
 
