@@ -43,6 +43,11 @@
             key-positions = <19 21>;
             timeout-ms = <50>;
         };
+
+        right_space {
+            bindings = <&kp PT_SPACE>;
+            key-positions = <31 33>;
+        };
     };
 
     macros {
