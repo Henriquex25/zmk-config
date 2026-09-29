@@ -184,11 +184,11 @@
         vscode {
             display-name = "VSCODE";
             bindings = <
-&kp F1  &kp F2            &kp F3                &kp F4               &kp F5             &kp F6                          &kp LA(PT_X)      &kp LA(F1)         &trans        &trans            &trans                &kp LC(F8)
-&tog 3  &kp LA(PT_MINUS)  &kp LC(LS(PT_J))      &selecionar_linha    &trans             &kp LC(HOME)                    &kp LA(HOME)      &kp LA(PT_W)       &kp LA(PT_A)  &kp LA(PT_Z)      &kp LS(LA(LC(PT_U)))  &trans
-&trans  &kp LA(PT_EQUAL)  &trans                &selecionar_palavra  &kp LC(LS(ENTER))  &kp LC(END)                     &kp LC(LA(UP))    &kp LC(RS(ENTER))  &kp LC(PT_E)  &kp LC(LS(PT_P))  &trans                &trans
-&trans  &trans            &kp LC(LS(LA(PT_U)))  &trans               &kp LC(LA(ENTER))  &trans        &trans    &trans  &kp LC(LA(DOWN))  &kp LA(LC(ENTER))  &kp LA(PT_P)  &trans            &trans                &trans
-                          &trans                &trans               &trans             &trans        &trans    &trans  &trans            &trans             &trans        &trans
+&kp F1  &kp F2            &kp F3                &kp F4             &kp F5               &kp F6                          &kp LA(PT_X)      &kp LA(F1)         &trans        &trans            &trans                &kp LC(F8)
+&tog 3  &kp LA(PT_MINUS)  &kp LC(LS(PT_J))      &selecionar_linha  &selecionar_palavra  &kp LC(HOME)                    &kp LA(HOME)      &kp LA(PT_W)       &kp LA(PT_A)  &kp LA(PT_Z)      &kp LS(LA(LC(PT_U)))  &trans
+&trans  &kp LA(PT_EQUAL)  &trans                &kp LC(PT_E)       &kp LC(LS(ENTER))    &kp LC(END)                     &kp LC(LA(UP))    &kp LC(RS(ENTER))  &kp LA(PT_P)  &kp LC(LS(PT_P))  &trans                &trans
+&trans  &trans            &kp LC(LS(LA(PT_U)))  &trans             &kp LC(LA(ENTER))    &trans        &trans    &trans  &kp LC(LA(DOWN))  &kp LA(LC(ENTER))  &trans        &trans            &trans                &trans
+                          &trans                &trans             &trans               &trans        &trans    &trans  &trans            &trans             &trans        &trans
             >;
 
             sensor-bindings =
