@@ -65,13 +65,6 @@
             label = "ARRAY";
         };
 
-        selecionar_palavra: deletar_palavra {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LEFT) &kp LC(LS(RIGHT))>;
-            label = "DELETAR_PALAVRA";
-        };
-
         buscar_favoritos: buscar_favoritos {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -170,9 +163,9 @@
             display-name = "SYMBOLS";
             bindings = <
 &kp F1  &kp F2         &kp F3       &kp F4         &kp F5        &kp F6                            &trans        &trans        &kp PT_AT                &trans                 &kp PT_DEGREE  &kp RA(PT_RIGHT_BRACKET)
-&tog 2  &kp BACKSLASH  &kp PT_PIPE  &kp PT_DOLLAR  &kp STAR      &kp PT_AMPS                       &kp PT_PLUS   &kp PT_MINUS  &kp PT_LEFT_BRACE        &kp PT_RIGHT_BRACE     &trans         &trans
-&trans  &kp EXCL       &kp LT       &kp PT_UNDER   &kp GT        &arrow_dot_php                    &kp PT_SLASH  &kp PT_COLON  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PT_SQT     &trans
-&trans  &trans         &trans       &kp PT_PLUS    &kp PT_MINUS  &array_php      &trans    &trans  &kp PT_HASH   &kp PT_EQUAL  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans         &trans
+&tog 2  &kp BACKSLASH  &kp PT_PIPE  &kp PT_DOLLAR  &kp STAR      &kp PT_AMPS                       &kp PT_PLUS   &kp PT_MINUS  &kp PT_LEFT_BRACE        &kp PT_RIGHT_BRACE     &kp PT_SQT     &trans
+&trans  &kp EXCL       &kp LT       &kp PT_UNDER   &kp GT        &arrow_dot_php                    &kp PT_SLASH  &kp PT_COLON  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LC(HOME)   &trans
+&trans  &trans         &trans       &kp PT_PLUS    &kp PT_MINUS  &array_php      &trans    &trans  &kp PT_HASH   &kp PT_EQUAL  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &kp LC(END)    &trans
                        &trans       &trans         &trans        &trans          &trans    &trans  &kp PT_SPACE  &trans        &trans                   &trans
             >;
 
@@ -184,11 +177,11 @@
         vscode {
             display-name = "VSCODE";
             bindings = <
-&kp F1  &kp F2            &kp F3                &kp F4             &kp F5               &kp F6                          &kp LA(PT_X)      &kp LA(F1)         &trans        &trans            &trans                &kp LC(F8)
-&tog 3  &kp LA(PT_MINUS)  &kp LC(LS(PT_J))      &selecionar_linha  &selecionar_palavra  &kp LC(HOME)                    &kp LA(HOME)      &kp LA(PT_W)       &kp LA(PT_A)  &kp LA(PT_Z)      &kp LS(LA(LC(PT_U)))  &trans
-&trans  &kp LA(PT_EQUAL)  &trans                &kp LC(PT_E)       &kp LC(LS(ENTER))    &kp LC(END)                     &kp LC(LA(UP))    &kp LC(RS(ENTER))  &kp LA(PT_P)  &kp LC(LS(PT_P))  &trans                &trans
-&trans  &trans            &kp LC(LS(LA(PT_U)))  &trans             &kp LC(LA(ENTER))    &trans        &trans    &trans  &kp LC(LA(DOWN))  &kp LA(LC(ENTER))  &trans        &trans            &trans                &trans
-                          &trans                &trans             &trans               &trans        &trans    &trans  &trans            &trans             &trans        &trans
+&kp F1  &kp F2            &kp F3                &kp F4             &kp F5             &kp F6                    &kp LA(PT_X)      &kp LA(F1)    &trans            &trans        &trans                &kp LC(F8)
+&tog 3  &kp LA(PT_MINUS)  &kp LC(LS(PT_J))      &selecionar_linha  &kp LC(PT_D)       &trans                    &kp LA(HOME)      &kp LA(PT_W)  &kp LA(PT_A)      &kp LA(PT_Z)  &kp LS(LA(LC(PT_U)))  &trans
+&trans  &kp LA(PT_EQUAL)  &trans                &kp LC(PT_E)       &kp LC(LS(ENTER))  &trans                    &kp LC(LA(UP))    &kp LA(PT_P)  &kp LS(LC(PT_P))  &trans        &trans                &trans
+&trans  &trans            &kp LC(LS(LA(PT_U)))  &trans             &kp LC(LA(ENTER))  &trans  &trans    &trans  &kp LC(LA(DOWN))  &trans        &trans            &trans        &trans                &trans
+                          &trans                &trans             &trans             &trans  &trans    &trans  &trans            &trans        &trans            &trans
             >;
 
             sensor-bindings =
