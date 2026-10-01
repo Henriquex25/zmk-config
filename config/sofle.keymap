@@ -147,11 +147,11 @@
         nav {
             display-name = "NAV";
             bindings = <
-&kp F1  &kp F2         &kp F3                 &kp F4                     &kp F5                               &kp F6                               &kp F7     &kp F8            &kp F9          &kp F10     &kp F11     &kp F12
-&trans  &none          &kp LA(LC(LG(POUND)))  &kp LA(LC(LG(AT_SIGN)))    &kp LC(LA(LG(EXCLAMATION)))          &buscar_favoritos                    &none      &kp HOME          &kp UP          &kp END     &trans      &trans
-&trans  &hm LGUI PT_A  &hm LEFT_ALT PT_S      &hm LEFT_CONTROL LG(PT_M)  &hm LEFT_SHIFT LS(LC(LG(UP_ARROW)))  &trans                               &kp SPACE  &kp LEFT_ARROW    &kp DOWN        &kp RIGHT   &trans      &kp PRINTSCREEN
-&trans  &none          &tog 1                 &none                      &kp LC(LG(LS(DOWN)))                 &trans             &trans    &trans  &tog 1     &kp C_PLAY_PAUSE  &kp C_PREVIOUS  &kp C_NEXT  &kp K_CALC  &tog 5
-                       &trans                 &trans                     &trans                               &trans             &trans    &trans  &trans     &trans            &trans          &trans
+&kp F1  &kp F2         &kp F3                 &kp F4                     &kp F5                       &kp F6                                  &kp F7     &kp F8            &kp F9          &kp F10     &kp F11     &kp F12
+&trans  &none          &kp LA(LC(LG(POUND)))  &kp LA(LC(LG(AT_SIGN)))    &kp LC(LA(LG(EXCLAMATION)))  &buscar_favoritos                       &none      &kp HOME          &kp UP          &kp END     &trans      &trans
+&trans  &hm LGUI PT_A  &hm LEFT_ALT PT_S      &hm LEFT_CONTROL LG(PT_M)  &hm LEFT_SHIFT LC(HOME)      &kp LS(LC(LG(UP)))                      &kp SPACE  &kp LEFT_ARROW    &kp DOWN        &kp RIGHT   &trans      &kp PRINTSCREEN
+&trans  &none          &tog 1                 &none                      &kp LC(DOWN)                 &kp LS(LC(LG(DOWN)))  &trans    &trans  &tog 1     &kp C_PLAY_PAUSE  &kp C_PREVIOUS  &kp C_NEXT  &kp K_CALC  &tog 5
+                       &trans                 &trans                     &trans                       &trans                &trans    &trans  &trans     &trans            &trans          &trans
             >;
 
             sensor-bindings =
@@ -164,8 +164,8 @@
             bindings = <
 &kp F1  &kp F2         &kp F3       &kp F4         &kp F5        &kp F6                                &trans               &trans        &kp PT_AT                &trans                 &kp PT_DEGREE  &kp RA(PT_RIGHT_BRACKET)
 &tog 2  &kp BACKSLASH  &kp PT_PIPE  &kp PT_DOLLAR  &kp STAR      &kp PT_AMPS                           &arrow_notation_php  &kp PT_MINUS  &kp PT_LEFT_BRACE        &kp PT_RIGHT_BRACE     &kp PT_SQT     &trans
-&trans  &kp PT_AT      &kp LT       &kp PT_UNDER   &kp GT        &kp PT_SLASH                          &array_notation      &kp PT_COLON  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LC(HOME)   &trans
-&trans  &trans         &trans       &kp PT_PLUS    &kp PT_MINUS  &kp PT_EXCLAMATION  &trans    &trans  &kp PT_HASH          &kp PT_EQUAL  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &kp LC(END)    &trans
+&trans  &kp PT_AT      &kp LT       &kp PT_UNDER   &kp GT        &kp PT_SLASH                          &array_notation      &kp PT_COLON  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans         &trans
+&trans  &trans         &trans       &kp PT_PLUS    &kp PT_MINUS  &kp PT_EXCLAMATION  &trans    &trans  &kp PT_HASH          &kp PT_EQUAL  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans         &trans
                        &trans       &trans         &trans        &trans              &trans    &trans  &kp PT_SPACE         &trans        &trans                   &trans
             >;
 
@@ -177,11 +177,11 @@
         vscode {
             display-name = "VSCODE";
             bindings = <
-&kp F1  &kp F2            &kp F3                &kp F4             &kp F5             &kp F6                    &kp LA(PT_X)      &kp LA(F1)    &trans            &trans        &trans                &kp LC(F8)
-&tog 3  &kp LA(PT_MINUS)  &kp LC(LS(PT_J))      &selecionar_linha  &kp LC(PT_D)       &trans                    &kp LA(HOME)      &kp LA(PT_W)  &kp LA(PT_A)      &kp LA(PT_Z)  &kp LS(LA(LC(PT_U)))  &trans
-&trans  &kp LA(PT_EQUAL)  &trans                &kp LC(PT_E)       &kp LC(LS(ENTER))  &trans                    &kp LC(LA(UP))    &kp LA(PT_P)  &kp LS(LC(PT_P))  &trans        &trans                &trans
-&trans  &trans            &kp LC(LS(LA(PT_U)))  &trans             &kp LC(LA(ENTER))  &trans  &trans    &trans  &kp LC(LA(DOWN))  &trans        &trans            &trans        &trans                &trans
-                          &trans                &trans             &trans             &trans  &trans    &trans  &trans            &trans        &trans            &trans
+&kp F1  &kp F2            &kp F3                &kp F4             &kp F5        &kp F6                               &kp LA(PT_X)      &kp LA(F1)    &trans            &trans        &trans                &kp LC(F8)
+&tog 3  &kp LA(PT_MINUS)  &kp LC(LS(PT_J))      &selecionar_linha  &kp LC(PT_D)  &trans                               &kp LA(HOME)      &kp LA(PT_W)  &kp LA(PT_A)      &kp LA(PT_Z)  &kp LS(LA(LC(PT_U)))  &trans
+&trans  &kp LA(PT_EQUAL)  &trans                &kp LC(PT_E)       &trans        &kp LS(LC(ENTER))                    &kp LC(LA(UP))    &kp LA(PT_P)  &kp LS(LC(PT_P))  &trans        &trans                &trans
+&trans  &trans            &kp LC(LS(LA(PT_U)))  &trans             &trans        &kp LA(LC(ENTER))  &trans    &trans  &kp LC(LA(DOWN))  &trans        &trans            &trans        &trans                &trans
+                          &trans                &trans             &trans        &trans             &trans    &trans  &trans            &trans        &trans            &trans
             >;
 
             sensor-bindings =
