@@ -135,11 +135,11 @@
             // Mão Direita (Segurar): J=Shift, K=Ctrl, L=Alt, ;=Super
 
             bindings = <
-&hold_tap LA(DELETE) PT_DOUBLE_QUOTES  &kp N1      &kp N2        &kp N3       &kp N4        &kp N5                                           &kp N6       &kp N7            &kp N8                &kp N9          &kp N0                 &kp PT_MINUS
-&kp TAB                                &kp Q       &kp W         &kp E        &kp R         &kp T                                            &kp Y        &kp U             &kp I                 &kp O           &kp P                  &kp PT_ACUTE
-&kp LEFT_SHIFT                         &hm LWIN A  &hm LALT S    &hm LCTRL D  &hm LSHIFT F  &kp G                                            &kp H        &hm LEFT_SHIFT J  &hm LCTRL K           &hm LEFT_ALT L  &hm LGUI PT_SEMICOLON  &kp PT_TILDE
-&kp LEFT_CONTROL                       &kp Z       &kp X         &kp C        &kp V         &kp B      &kp CAPSLOCK    &kp LS(LA(LC(PT_M)))  &kp N        &kp M             &kp COMMA             &kp DOT         &kp PT_QUESTION        &kp PT_C_CEDILLA
-                                                   &kp LC(PT_V)  &copiar      &kp LEFT_ALT  &lt 2 ESC  &lt 3 SPACE     &kp BACKSPACE         &lt 1 ENTER  &kp DELETE        &kp LS(LA(LC(PT_L)))  &lt 4 LEFT_GUI
+&hold_tap LA(DELETE) PT_DOUBLE_QUOTES  &kp N1      &kp N2        &kp N3       &kp N4        &kp N5                                           &kp N6       &kp N7            &kp N8                                            &kp N9          &kp N0                 &kp PT_MINUS
+&kp TAB                                &kp Q       &kp W         &kp E        &kp R         &kp T                                            &kp Y        &kp U             &kp I                                             &kp O           &kp P                  &kp PT_ACUTE
+&kp LEFT_SHIFT                         &hm LWIN A  &hm LALT S    &hm LCTRL D  &hm LSHIFT F  &kp G                                            &kp H        &hm LEFT_SHIFT J  &hm LCTRL K                                       &hm LEFT_ALT L  &hm LGUI PT_SEMICOLON  &kp PT_TILDE
+&kp LEFT_CONTROL                       &kp Z       &kp X         &kp C        &kp V         &kp B      &kp CAPSLOCK    &kp LS(LA(LC(PT_M)))  &kp N        &kp M             &kp COMMA                                         &kp DOT         &kp PT_QUESTION        &kp PT_C_CEDILLA
+                                                   &kp LC(PT_V)  &copiar      &kp LEFT_ALT  &lt 2 ESC  &lt 3 SPACE     &kp BACKSPACE         &lt 1 ENTER  &kp DELETE        &hold_tap LS(LA(LC(RIGHT_ALT))) LS(LA(LC(PT_L)))  &lt 4 LEFT_GUI
             >;
 
             sensor-bindings =
@@ -165,11 +165,11 @@
         symbols {
             display-name = "SYMBOLS";
             bindings = <
-&kp F1  &kp F2          &kp F3       &kp F4         &kp F5        &kp F6                                &trans               &trans        &kp PT_AT                &trans                 &kp PT_DEGREE  &kp RA(PT_RIGHT_BRACKET)
-&tog 2  &kp BACKSLASH   &kp PT_PIPE  &kp PT_DOLLAR  &kp STAR      &kp PT_AMPS                           &arrow_notation_php  &kp PT_MINUS  &kp PT_LEFT_BRACE        &kp PT_RIGHT_BRACE     &kp PT_SQT     &trans
-&trans  &kp PT_PERCENT  &kp LT       &kp PT_UNDER   &kp GT        &kp PT_SLASH                          &array_notation      &kp PT_COLON  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans         &trans
-&trans  &trans          &trans       &kp PT_PLUS    &kp PT_MINUS  &kp PT_EXCLAMATION  &trans    &trans  &kp PT_HASH          &kp PT_EQUAL  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans         &trans
-                        &trans       &trans         &trans        &trans              &trans    &trans  &kp PT_SPACE         &trans        &trans                   &trans
+&kp F1  &kp F2            &kp F3       &kp F4         &kp F5        &kp F6                                &trans               &trans        &kp PT_AT                &trans                 &kp PT_DEGREE  &kp RA(PT_RIGHT_BRACKET)
+&tog 2  &kp PT_BACKSLASH  &kp PT_PIPE  &kp PT_DOLLAR  &kp STAR      &kp PT_AMPS                           &arrow_notation_php  &kp PT_MINUS  &kp PT_LEFT_BRACE        &kp PT_RIGHT_BRACE     &kp PT_SQT     &trans
+&trans  &kp PT_PERCENT    &kp LT       &kp PT_UNDER   &kp GT        &kp PT_SLASH                          &array_notation      &kp PT_COLON  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans         &trans
+&trans  &trans            &trans       &kp PT_PLUS    &kp PT_MINUS  &kp PT_EXCLAMATION  &trans    &trans  &kp PT_HASH          &kp PT_EQUAL  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans         &trans
+                          &trans       &trans         &trans        &trans              &trans    &trans  &kp PT_SPACE         &trans        &trans                   &trans
             >;
 
             sensor-bindings =
