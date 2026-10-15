@@ -219,33 +219,30 @@
         nav_right {
             display-name = "NAV RIGHT";
             label = "NAV RIGHT";
-
             bindings = <
 &kp F1  &kp F2         &kp F3                 &kp F4                      &kp F5                       &kp F6                                  &kp F7     &kp F8            &kp F9          &kp F10     &kp F11     &kp F12
 &trans  &trans         &kp LA(LC(LG(POUND)))  &kp LA(LC(LG(AT_SIGN)))     &kp LC(LA(LG(EXCLAMATION)))  &buscar_favoritos                       &trans     &kp HOME          &kp UP          &kp END     &trans      &trans
 &trans  &hml LGUI F16  &hml LEFT_ALT F15      &hml LEFT_CONTROL LG(PT_M)  &hml LEFT_SHIFT LC(HOME)     &kp LS(LC(LG(UP)))                      &kp SPACE  &kp LEFT_ARROW    &kp DOWN        &kp RIGHT   &kp F13     &kp PRINTSCREEN
-&trans  &trans         &trans                 &none                       &kp LC(END)                  &kp LS(LC(LG(DOWN)))  &trans    &trans  &tog 1     &kp C_PLAY_PAUSE  &kp C_PREVIOUS  &kp C_NEXT  &kp K_CALC  &tog 6
+&trans  &trans         &trans                 &trans                      &kp LC(END)                  &kp LS(LC(LG(DOWN)))  &trans    &trans  &tog 1     &kp C_PLAY_PAUSE  &kp C_PREVIOUS  &kp C_NEXT  &kp K_CALC  &tog 6
                        &trans                 &trans                      &trans                       &trans                &trans    &trans  &trans     &trans            &trans          &trans
             >;
 
             sensor-bindings =
                 <&inc_dec_kp LS(LA(LC(UP))) LS(LA(LC(DOWN)))>,
                 <&inc_dec_kp UP DOWN>;
-
         };
 
         nav_left {
             display-name = "NAV LEFT";
             label = "NAV LEFT";
-        
             bindings = <
-&kp F12          &kp F11     &kp F10     &kp F9          &kp F8            &kp F7                          &kp F6                &kp F5                       &kp F4                      &kp F3                 &kp F2         &kp F1
-&trans           &trans      &kp END     &kp UP          &kp HOME          &trans                          &buscar_favoritos     &kp LC(LA(LG(EXCLAMATION)))  &kp LA(LC(LG(AT_SIGN)))     &kp LA(LC(LG(POUND)))  &trans         &trans
-&kp PRINTSCREEN  &kp F13     &kp LEFT    &kp DOWN        &kp RIGHT         &kp SPACE                       &kp LS(LC(LG(UP)))    &hmr LEFT_SHIFT LC(HOME)     &hmr LEFT_CONTROL LG(PT_M)  &hmr LEFT_ALT F15      &hmr LGUI F16  &trans
-&tog 6           &kp K_CALC  &kp C_NEXT  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &tog 2          &trans  &trans  &kp LS(LC(LG(DOWN)))  &kp LC(END)                  &none                       &trans                 &trans         &trans
-                                    &trans      &trans          &trans            &trans          &trans  &trans  &trans                &trans                       &trans                      &trans                 &trans
+&kp F1           &kp F2      &kp F3      &kp F4          &kp F5            &kp F6                       &kp F7                &kp F8                       &kp F9                      &kp F10                &kp F11        &kp F12
+&trans           &trans      &kp HOME    &kp UP          &kp END           &trans                       &buscar_favoritos     &kp LC(LA(LG(EXCLAMATION)))  &kp LA(LC(LG(AT_SIGN)))     &kp LA(LC(LG(POUND)))  &trans         &trans
+&kp PRINTSCREEN  &kp F13     &kp LEFT    &kp DOWN        &kp RIGHT         &kp SPACE                    &kp LS(LC(LG(UP)))    &hmr LEFT_SHIFT LC(HOME)     &hmr LEFT_CONTROL LG(PT_M)  &hmr LEFT_ALT F15      &hmr LGUI F16  &trans
+&tog 6           &kp K_CALC  &kp C_NEXT  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &tog 2     &trans    &trans  &kp LS(LC(LG(DOWN)))  &kp LC(END)                  &trans                      &trans                 &trans         &trans
+                             &trans      &trans          &trans            &trans     &trans    &trans  &trans                &trans                       &trans                      &trans
             >;
-        
+
             sensor-bindings =
                 <&inc_dec_kp UP DOWN>,
                 <&inc_dec_kp LS(LA(LC(UP))) LS(LA(LC(DOWN)))>;
@@ -296,11 +293,11 @@
 
         num {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans           &trans     &trans        &trans      &trans          &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &kp PT_ASTERISK  &kp PT_N7  &kp PT_N8     &kp PT_N9   &kp PT_PERCENT  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &kp PT_SLASH     &kp PT_N4  &kp PT_N5     &kp PT_N6   &kp PT_PLUS     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp PT_COLON     &kp PT_N1  &kp PT_N2     &kp PT_N3   &kp PT_MINUS    &tog 6
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans           &kp N0     &kp PT_COMMA  &kp PT_DOT
+&trans  &trans          &trans      &trans        &trans  &trans                             &trans           &trans     &trans        &trans      &trans          &trans
+&trans  &kp PT_PERCENT  &kp N9      &kp N8        &kp N7  &kp PT_ASTERISK                    &kp PT_ASTERISK  &kp PT_N7  &kp PT_N8     &kp PT_N9   &kp PT_PERCENT  &trans
+&trans  &kp PT_PLUS     &kp N6      &kp N5        &kp N4  &kp PT_SLASH                       &kp PT_SLASH     &kp PT_N4  &kp PT_N5     &kp PT_N6   &kp PT_PLUS     &trans
+&tog 6  &kp PT_MINUS    &kp N3      &kp N2        &kp N1  &kp PT_COLON     &trans    &trans  &kp PT_COLON     &kp PT_N1  &kp PT_N2     &kp PT_N3   &kp PT_MINUS    &tog 6
+                        &kp PT_DOT  &kp PT_COMMA  &kp N0  &trans           &trans    &trans  &trans           &kp N0     &kp PT_COMMA  &kp PT_DOT
             >;
 
             label = "NUM";
