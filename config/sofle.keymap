@@ -4,11 +4,15 @@
 #include <dt-bindings/zmk/keys.h>
 #include "keys_pt_abnt2.h"
 
-#define BASE 0
-#define NAV_NUM 1
-#define SYMBOLS 2
-#define VSCODE_OS 3
-#define SYSTEM 4
+#define BASE       0
+#define NAV_RIGHT  1
+#define NAV_LEFT   2
+#define SYMBOLS    3
+#define VSCODE_OS  4
+#define SYSTEM     5
+#define NUM        6
+#define GAME       7
+#define GAME_2     8
 
 / {
     combos {
@@ -245,6 +249,21 @@
             sensor-bindings =
                 <&inc_dec_kp UP DOWN>,
                 <&inc_dec_kp LS(LA(LC(UP))) LS(LA(LC(DOWN)))>;
+        };
+
+        symbols {
+            display-name = "SYMBOLS";
+            bindings = <
+&kp F1  &kp F2            &kp F3       &kp F4         &kp F5        &kp F6                                &trans               &trans        &kp PT_AT                &trans                 &kp PT_DEGREE  &kp RA(PT_RIGHT_BRACKET)
+&tog 3  &kp PT_BACKSLASH  &kp PT_PIPE  &kp PT_DOLLAR  &kp STAR      &kp PT_AMPS                           &arrow_notation_php  &kp PT_MINUS  &kp PT_LEFT_BRACE        &kp PT_RIGHT_BRACE     &trans         &trans
+&trans  &kp PT_PERCENT    &kp LT       &kp PT_UNDER   &kp GT        &kp PT_SLASH                          &array_notation      &kp PT_EQUAL  &kp PT_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PT_SQT     &trans
+&trans  &trans            &trans       &kp PT_PLUS    &kp PT_MINUS  &kp PT_EXCLAMATION  &trans    &trans  &kp PT_HASH          &kp PT_COLON  &kp PT_LEFT_BRACKET      &kp PT_RIGHT_BRACKET   &trans         &trans
+                          &trans       &trans         &trans        &trans              &trans    &trans  &kp PT_SPACE         &trans        &trans                   &trans
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
         vscode {
