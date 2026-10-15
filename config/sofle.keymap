@@ -204,7 +204,7 @@
 &kp TAB                                &kp Q        &kp W        &kp E         &kp R          &kp T                                            &kp Y           &kp U              &kp I                                  &kp O            &kp P                   &kp PT_ACUTE
 &kp LEFT_SHIFT                         &hml LWIN A  &hml LALT S  &hml LCTRL D  &hml LSHIFT F  &kp G                                            &h_dois_pontos  &hmr LEFT_SHIFT J  &hmr LCTRL K                           &hmr LEFT_ALT L  &hmr LGUI PT_SEMICOLON  &kp PT_TILDE
 &kp LEFT_CONTROL                       &kp Z        &kp X        &kp C         &kp V          &kp B      &kp CAPSLOCK    &kp LS(LA(LC(PT_M)))  &kp N           &kp M              &kp COMMA                              &kp DOT          &kp PT_QUESTION         &kp PT_C_CEDILLA
-                                                    &colar       &copiar       &kp LEFT_ALT   &lt 2 ESC  &lt 3 SPACE     &kp BACKSPACE         &lt 1 ENTER     &kp DELETE         &altgr_tap RIGHT_ALT LC(LA(PT_SPACE))  &lt 4 LEFT_GUI
+                                                    &colar       &copiar       &kp LEFT_ALT   &lt 1 ESC  &lt 2 SPACE     &lt 3 BACKSPACE       &lt 1 ENTER     &kp DELETE         &altgr_tap RIGHT_ALT LC(LA(PT_SPACE))  &lt 4 LEFT_GUI
             >;
 
             sensor-bindings =
