@@ -5,6 +5,18 @@
 #include <dt-bindings/zmk/outputs.h>
 #include "keys_pt_abnt2.h"
 
+&caps_word {
+    continue-list = <
+        UNDERSCORE
+        BACKSPACE
+        DELETE
+        MINUS
+        SLASH
+        SEMICOLON
+        RETURN
+    >;
+};
+
 #define BASE       0
 #define NAV_RIGHT  1
 #define NAV_LEFT   2
