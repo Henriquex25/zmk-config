@@ -53,18 +53,6 @@
             bindings = <&kp PT_SPACE>;
             key-positions = <31 33>;
         };
-
-        caps_word_right {
-            bindings = <&caps_word>;
-            key-positions = <7 8>;
-            layers = <0>;
-        };
-
-        caps_word_left {
-            bindings = <&caps_word>;
-            key-positions = <3 4>;
-            layers = <0>;
-        };
     };
 
     macros {
@@ -204,6 +192,19 @@
             quick-tap-ms = <0>;
             bindings = <&kp>, <&kp>;
         };
+
+        tap_hold_caps_word: tap_hold_caps_word {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_HOLD_CAPS_WORD";
+            bindings = <&caps_word>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <125>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+        };
     };
 
     keymap {
@@ -217,11 +218,11 @@
             // Mão Direita (Segurar): J=Shift, K=Ctrl, L=Alt, ;=Super
 
             bindings = <
-&hold_tap LA(DELETE) PT_DOUBLE_QUOTES  &kp N1       &kp N2       &kp N3        &kp N4         &kp N5                                           &kp N6          &kp N7             &kp N8                                 &kp N9           &kp N0                  &kp PT_MINUS
-&kp TAB                                &kp Q        &kp W        &kp E         &kp R          &kp T                                            &kp Y           &kp U              &kp I                                  &kp O            &kp P                   &kp PT_ACUTE
-&kp LEFT_SHIFT                         &hml LWIN A  &hml LALT S  &hml LCTRL D  &hml LSHIFT F  &kp G                                            &h_dois_pontos  &hmr LEFT_SHIFT J  &hmr LCTRL K                           &hmr LEFT_ALT L  &hmr LGUI PT_SEMICOLON  &kp PT_TILDE
-&kp LEFT_CONTROL                       &kp Z        &kp X        &kp C         &kp V          &kp B      &kp CAPSLOCK    &kp LS(LA(LC(PT_M)))  &kp N           &kp M              &kp COMMA                              &kp DOT          &kp PT_QUESTION         &kp PT_C_CEDILLA
-                                                    &colar       &copiar       &kp LEFT_ALT   &lt 2 ESC  &lt 3 SPACE     &lt 4 BACKSPACE       &lt 1 ENTER     &kp DELETE         &altgr_tap RIGHT_ALT LC(LA(PT_SPACE))  &lt 5 LEFT_GUI
+&hold_tap LA(DELETE) PT_DOUBLE_QUOTES  &kp N1       &kp N2       &tap_hold_caps_word 0 N3  &kp N4         &kp N5                                           &kp N6          &kp N7             &tap_hold_caps_word 0 N8               &kp N9           &kp N0                  &kp PT_MINUS
+&kp TAB                                &kp Q        &kp W        &kp E                     &kp R          &kp T                                            &kp Y           &kp U              &kp I                                  &kp O            &kp P                   &kp PT_ACUTE
+&kp LEFT_SHIFT                         &hml LWIN A  &hml LALT S  &hml LCTRL D              &hml LSHIFT F  &kp G                                            &h_dois_pontos  &hmr LEFT_SHIFT J  &hmr LCTRL K                           &hmr LEFT_ALT L  &hmr LGUI PT_SEMICOLON  &kp PT_TILDE
+&kp LEFT_CONTROL                       &kp Z        &kp X        &kp C                     &kp V          &kp B      &kp CAPSLOCK    &kp LS(LA(LC(PT_M)))  &kp N           &kp M              &kp COMMA                              &kp DOT          &kp PT_QUESTION         &kp PT_C_CEDILLA
+                                                    &colar       &copiar                   &kp LEFT_ALT   &lt 2 ESC  &lt 3 SPACE     &lt 4 BACKSPACE       &lt 1 ENTER     &kp DELETE         &altgr_tap RIGHT_ALT LC(LA(PT_SPACE))  &lt 5 LEFT_GUI
             >;
 
             sensor-bindings =
