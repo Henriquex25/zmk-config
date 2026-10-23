@@ -221,6 +221,7 @@
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
+
             tap-ms = <100>;
         };
     };
@@ -347,7 +348,7 @@
             label = "GAME";
             sensor-bindings =
                 <&inc_dec_kp PAGE_UP PAGE_DOWN>,
-                <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+                <&inc_dec_msc SCRL_UP SCRL_DOWN>;
         };
 
         game_2 {
