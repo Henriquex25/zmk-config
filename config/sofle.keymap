@@ -162,9 +162,9 @@
             tapping-term-ms = <300>;
         };
 
-        sete_dois_pontos: sete_dois_pontos {
+        n7_dois_pontos: n7_dois_pontos {
             compatible = "zmk,behavior-tap-dance";
-            label = "SETE_DOIS_PONTOS";
+            label = "N7_DOIS_PONTOS";
             #binding-cells = <0>;
             bindings = <&kp N7>, <&kp PT_COLON>;
         };
@@ -198,16 +198,16 @@
             tap-ms = <20>;
         };
 
-        quatro_enter: quatro_enter {
+        n4_enter: n4_enter {
             compatible = "zmk,behavior-tap-dance";
-            label = "QUATRO_ENTER";
+            label = "N4_ENTER";
             #binding-cells = <0>;
             bindings = <&kp N4>, <&kp ENTER>;
         };
 
-        seis_space: seis_space {
+        n6_space: n6_space {
             compatible = "zmk,behavior-tap-dance";
-            label = "SEIS_SPACE";
+            label = "N6_SPACE";
             #binding-cells = <0>;
             bindings = <&kp N6>, <&kp SPACE>;
         };
@@ -225,6 +225,13 @@
             tapping-term-ms = <200>;
             bindings = <&kp N8>, <&caps_word>;
         };
+
+        n5_backspace: n5_backspace {
+            compatible = "zmk,behavior-tap-dance";
+            label = "N5_BACKSPACE";
+            #binding-cells = <0>;
+            bindings = <&kp N5>, <&kp BACKSPACE>;
+        };
     };
 
     keymap {
@@ -238,11 +245,11 @@
             // Mão Direita (Segurar): J=Shift, K=Ctrl, L=Alt, ;=Super
 
             bindings = <
-&hold_tap LA(DELETE) PT_DOUBLE_QUOTES  &kp N1       &kp N2       &n3_caps_word  &quatro_enter  &kp N5                                           &seis_space  &sete_dois_pontos  &n8_caps_word                          &kp N9           &kp N0                  &kp PT_MINUS
-&kp TAB                                &kp Q        &kp W        &kp E          &kp R          &kp T                                            &kp Y        &kp U              &kp I                                  &kp O            &kp P                   &kp PT_ACUTE
-&kp LEFT_SHIFT                         &hml LWIN A  &hml LALT S  &hml LCTRL D   &hml LSHIFT F  &kp G                                            &kp H        &hmr LEFT_SHIFT J  &hmr LCTRL K                           &hmr LEFT_ALT L  &hmr LGUI PT_SEMICOLON  &kp PT_TILDE
-&kp LEFT_CONTROL                       &kp Z        &kp X        &kp C          &kp V          &kp B      &kp CAPSLOCK    &kp LS(LA(LC(PT_M)))  &kp N        &kp M              &kp COMMA                              &kp DOT          &kp PT_QUESTION         &kp PT_C_CEDILLA
-                                                    &colar       &copiar        &kp LEFT_ALT   &lt 2 ESC  &lt 3 SPACE     &lt 4 BACKSPACE       &lt 1 ENTER  &kp DELETE         &altgr_tap RIGHT_ALT LC(LA(PT_SPACE))  &lt 5 LEFT_GUI
+&hold_tap LA(DELETE) PT_DOUBLE_QUOTES  &kp N1       &kp N2       &n3_caps_word  &n4_enter      &n5_backspace                                        &n6_space    &n7_dois_pontos    &n8_caps_word                          &kp N9           &kp N0                  &kp PT_MINUS
+&kp TAB                                &kp Q        &kp W        &kp E          &kp R          &kp T                                                &kp Y        &kp U              &kp I                                  &kp O            &kp P                   &kp PT_ACUTE
+&kp LEFT_SHIFT                         &hml LWIN A  &hml LALT S  &hml LCTRL D   &hml LSHIFT F  &kp G                                                &kp H        &hmr LEFT_SHIFT J  &hmr LCTRL K                           &hmr LEFT_ALT L  &hmr LGUI PT_SEMICOLON  &kp PT_TILDE
+&kp LEFT_CONTROL                       &kp Z        &kp X        &kp C          &kp V          &kp B          &kp CAPSLOCK    &kp LS(LA(LC(PT_M)))  &kp N        &kp M              &kp COMMA                              &kp DOT          &kp PT_QUESTION         &kp PT_C_CEDILLA
+                                                    &colar       &copiar        &kp LEFT_ALT   &lt 2 ESC      &lt 3 SPACE     &lt 4 BACKSPACE       &lt 1 ENTER  &kp DELETE         &altgr_tap RIGHT_ALT LC(LA(PT_SPACE))  &lt 5 LEFT_GUI
             >;
 
             sensor-bindings =
