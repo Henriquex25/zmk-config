@@ -107,7 +107,7 @@
             bindings = <&kp>, <&kp>;
 
             flavor = "balanced";
-            tapping-term-ms = <280>;
+            tapping-term-ms = <260>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <100>;
             hold-trigger-key-positions = <
@@ -127,7 +127,7 @@
             bindings = <&kp>, <&kp>;
 
             flavor = "balanced";
-            tapping-term-ms = <280>;
+            tapping-term-ms = <260>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <100>;
             hold-trigger-key-positions = <
@@ -245,11 +245,11 @@
             // Mão Direita (Segurar): J=Shift, K=Ctrl, L=Alt, ;=Super
 
             bindings = <
-&hold_tap LA(DELETE) PT_DOUBLE_QUOTES  &kp N1       &kp N2       &n3_caps_word  &n4_enter      &n5_backspace                                        &n6_space    &n7_dois_pontos    &n8_caps_word                          &kp N9           &kp N0                  &kp PT_MINUS
-&kp TAB                                &kp Q        &kp W        &kp E          &kp R          &kp T                                                &kp Y        &kp U              &kp I                                  &kp O            &kp P                   &kp PT_ACUTE
-&kp LEFT_SHIFT                         &hml LWIN A  &hml LALT S  &hml LCTRL D   &hml LSHIFT F  &kp G                                                &kp H        &hmr LEFT_SHIFT J  &hmr LCTRL K                           &hmr LEFT_ALT L  &hmr LGUI PT_SEMICOLON  &kp PT_TILDE
-&kp LEFT_CONTROL                       &kp Z        &kp X        &kp C          &kp V          &kp B          &kp CAPSLOCK    &kp LS(LA(LC(PT_M)))  &kp N        &kp M              &kp COMMA                              &kp DOT          &kp PT_QUESTION         &kp PT_C_CEDILLA
-                                                    &colar       &copiar        &kp LEFT_ALT   &lt 2 ESC      &lt 3 SPACE     &lt 4 BACKSPACE       &lt 1 ENTER  &kp DELETE         &altgr_tap RIGHT_ALT LC(LA(PT_SPACE))  &lt 5 LEFT_GUI
+&hold_tap LA(DELETE) PT_DOUBLE_QUOTES  &kp N1       &kp N2       &n3_caps_word  &n4_enter      &n5_backspace                                        &n6_space    &n7_dois_pontos    &n8_caps_word                            &kp N9           &kp N0                  &kp PT_MINUS
+&kp TAB                                &kp Q        &kp W        &kp E          &kp R          &kp T                                                &kp Y        &kp U              &kp I                                    &kp O            &kp P                   &kp PT_ACUTE
+&kp LEFT_SHIFT                         &hml LWIN A  &hml LALT S  &hml LCTRL D   &hml LSHIFT F  &kp G                                                &kp H        &hmr LEFT_SHIFT J  &hmr LCTRL K                             &hmr LEFT_ALT L  &hmr LGUI PT_SEMICOLON  &kp PT_TILDE
+&kp LEFT_CONTROL                       &kp Z        &kp X        &kp C          &kp V          &kp B          &kp CAPSLOCK    &kp LS(LA(LC(PT_M)))  &kp N        &kp M              &kp COMMA                                &kp DOT          &kp PT_QUESTION         &kp PT_C_CEDILLA
+                                                    &colar       &copiar        &kp LEFT_ALT   &lt 2 ESC      &lt 3 SPACE     &lt 4 BACKSPACE       &lt 1 ENTER  &kp DELETE         &altgr_tap (RIGHT_ALT) LC(LA(PT_SPACE))  &lt 5 LEFT_GUI
             >;
 
             sensor-bindings =
